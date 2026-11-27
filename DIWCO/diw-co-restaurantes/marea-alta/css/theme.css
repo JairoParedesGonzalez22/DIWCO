@@ -1,0 +1,18 @@
+:root {
+  --acento: #14284B;
+  --acento-texto: #FFFFFF;
+  --imagen-inicio: url('../img/inicio.jpg');
+}
+
+.logo img,
+.restaurantes img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.inicio-imagen {
+  background-image: url('../img/inicio.jpg') !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
