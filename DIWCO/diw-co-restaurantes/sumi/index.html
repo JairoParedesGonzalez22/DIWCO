@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cocina japonesa auténtica · SUMI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../shared/css/base.css" />
+    <link rel="stylesheet" href="../shared/css/components.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+  </head>
+  <body data-sitio="sumi">
+    <div class="inicio">
+      <div
+        class="inicio-imagen"
+        role="img"
+        aria-label="Rolls de salmón y aguacate"
+      ></div>
+
+      <main class="inicio-panel">
+        <a class="logo" href="index.html"
+          ><img src="img/logo.png" alt="Logotipo de SUMI"
+        /></a>
+        <h1>SUMI</h1>
+        <p class="etiqueta">Cocina japonesa auténtica</p>
+        <div class="botones-inicio">
+          <a class="boton" href="reservas.html">Reservar</a>
+          <a class="boton" href="pedido-online.html">Pedir a domicilio</a>
+          <a class="boton boton-secundario" href="galeria.html">Galería</a>
+        </div>
+      </main>
+
+      <nav class="menu-lateral" aria-label="Principal">
+        <button type="button" class="menu-cerrar" aria-label="Cerrar menú">
+          ×
+        </button>
+        <a href="index.html">Inicio</a>
+        <a href="la-carta.html">La carta</a>
+        <a href="pedido-online.html">Pedido online / Delivery</a>
+        <a href="reservas.html">Reservas</a>
+        <a href="nuestros-restaurantes.html">Nuestros restaurantes</a>
+        <a href="contacto-y-ubicacion.html">Contacto</a>
+        <a href="sobre-nosotros-y-legal.html#privacidad"
+          >Política de privacidad</a
+        >
+        <p class="marca">
+          <strong>SUMI Restaurantes</strong
+          ><em>Cocina japonesa, ingredientes premium</em>
+        </p>
+      </nav>
+
+      <button type="button" class="menu-abrir" hidden>Menú</button>
+    </div>
+
+    <div class="aviso-cookies" role="region" aria-label="Aviso de cookies">
+      <p>
+        Usamos cookies para mejorar tu experiencia y analizar la navegación.
+        <a href="sobre-nosotros-y-legal.html#cookies">Más información</a>
+      </p>
+      <div>
+        <button
+          type="button"
+          class="boton boton-secundario"
+          data-cookies="rechazar"
+        >
+          Rechazar
+        </button>
+        <button type="button" class="boton" data-cookies="aceptar">
+          Aceptar
+        </button>
+      </div>
+    </div>
+
+    <script src="../shared/js/vendor/jquery-4.1.0.min.js"></script>
+    <script src="../shared/js/main.js"></script>
+  </body>
+</html>
