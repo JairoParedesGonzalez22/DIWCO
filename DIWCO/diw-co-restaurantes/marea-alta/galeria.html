@@ -30,47 +30,46 @@
     <div class="cabecera-pagina">
       <div>
         <h1>Galería</h1>
-        <p class="subtitulo">Un vistazo a nuestro espacio, nuestros platos y nuestros eventos.</p>
+        <p class="subtitulo">Nuestro comedor frente al puerto, el producto de lonja y los platos de Marea Alta.</p>
       </div>
       <div id="filtros-galeria" class="filtros">
-        <button type="button" class="boton boton-secundario activo" data-filtro="todo" aria-pressed="true">Todo</button>
-        <button type="button" class="boton boton-secundario" data-filtro="local" aria-pressed="false">El local</button>
-        <button type="button" class="boton boton-secundario" data-filtro="platos" aria-pressed="false">Platos</button>
-        <button type="button" class="boton boton-secundario" data-filtro="eventos" aria-pressed="false">Eventos</button>
+        <button type="button" class="boton boton-secundario activo" data-filtro="todo">Todas</button>
+        <button type="button" class="boton boton-secundario" data-filtro="local">El local y el puerto</button>
+        <button type="button" class="boton boton-secundario" data-filtro="platos">Nuestros platos</button>
       </div>
     </div>
 
-    <section class="galeria" aria-label="Fotografías de Marea Alta">
+    <div class="galeria">
       <button type="button" class="foto" data-categoria="local"><img src="img/galeria-1.jpg" alt="Salón principal de Marea Alta"></button>
-      <button type="button" class="foto" data-categoria="platos"><img src="img/galeria-2.jpg" alt="Rodaballo salvaje a la brasa"></button>
-      <button type="button" class="foto" data-categoria="local"><img src="img/galeria-3.jpg" alt="Terraza frente al puerto"></button>
-      <button type="button" class="foto" data-categoria="eventos"><img src="img/galeria-4.jpg" alt="Mesa preparada para evento privado"></button>
-      <button type="button" class="foto" data-categoria="platos"><img src="img/galeria-5.jpg" alt="Arroz meloso de bogavante"></button>
-      <button type="button" class="foto" data-categoria="local"><img src="img/galeria-6.jpg" alt="Detalle de bodega y barra"></button>
-      <button type="button" class="foto" data-categoria="platos"><img src="img/galeria-7.jpg" alt="Zamburiñas a la plancha"></button>
-      <button type="button" class="foto" data-categoria="eventos"><img src="img/galeria-8.jpg" alt="Cata de vinos atlánticos"></button>
-    </section>
-
-    <div class="visor" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
-      <button type="button" class="visor-cerrar" aria-label="Cerrar imagen">×</button>
-      <button type="button" class="visor-anterior" aria-label="Imagen anterior">‹</button>
-      <img class="visor-img" src="" alt="">
-      <button type="button" class="visor-siguiente" aria-label="Imagen siguiente">›</button>
+      <button type="button" class="foto" data-categoria="local"><img src="img/galeria-2.jpg" alt="Terraza con vistas al Puerto Deportivo"></button>
+      <button type="button" class="foto" data-categoria="local"><img src="img/galeria-3.jpg" alt="Barra y bodega de vinos atlánticos"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/galeria-4.jpg" alt="Zamburiñas a la plancha"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/galeria-5.jpg" alt="Pulpo a la brasa sobre patata revolcona"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/galeria-6.jpg" alt="Rodaballo de lonja a la bilbaína"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/galeria-7.jpg" alt="Arroz meloso de bogavante"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/galeria-8.jpg" alt="Lubina salvaje a la brasa"></button>
     </div>
   </main>
+
+  <div class="visor" hidden>
+    <button type="button" class="visor-cerrar" aria-label="Cerrar">&times;</button>
+    <button type="button" class="visor-anterior" aria-label="Anterior">&lsaquo;</button>
+    <img class="visor-img" src="" alt="">
+    <button type="button" class="visor-siguiente" aria-label="Siguiente">&rsaquo;</button>
+  </div>
 
   <footer class="pie">
     <div>
       <h2>Dirección y contacto</h2>
-      <p>Puerto Deportivo 12 · Gijón<br>+34 985 11 22 33</p>
+      <p>Puerto Deportivo 12, Gijón<br>+34 985 11 22 33</p>
     </div>
     <div>
       <h2>Redes sociales</h2>
-      <p class="redes"><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></p>
+      <p class="redes"><a href="#">Instagram</a> <a href="#">Facebook</a></p>
     </div>
     <div>
       <h2>Horarios</h2>
-      <p>Mar–dom · 13:00–16:00 / 20:00–23:30<br>Lunes cerrado</p>
+      <p>Mar–Dom: 13:00–16:00 / 20:00–23:30<br>Lunes cerrado</p>
     </div>
     <div>
       <h2><a href="sobre-nosotros-y-legal.html">Sobre nosotros y legal</a></h2>

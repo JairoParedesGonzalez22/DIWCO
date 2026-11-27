@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Inicio · Marea Alta</title>
+  <title>Marea Alta · DIW&amp;CO Restaurantes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../shared/css/base.css">
@@ -15,42 +15,46 @@
   <button type="button" class="menu-abrir" hidden>Menú</button>
 
   <main class="inicio">
-    <div class="inicio-imagen" role="img" aria-label="Comedor y barra de Marea Alta"></div>
+    <div class="inicio-imagen" role="img" aria-label="Comedor y vistas al puerto de Marea Alta"></div>
 
     <section class="inicio-panel">
       <a class="logo" href="index.html"><img src="img/logo.png" alt="Logotipo de Marea Alta"></a>
-      <p class="etiqueta">Pescados y mariscos · DIW&amp;CO</p>
       <h1>Marea Alta</h1>
-      <p>Puerto Deportivo 12 · Gijón<br>+34 985 11 22 33<br>Mar–dom · 13:00–16:00 / 20:00–23:30 (Lunes cerrado)</p>
+      <p class="etiqueta">DIW&amp;CO RESTAURANTES</p>
+      <p><em>Pescados de lonja y mariscos del Cantábrico.<br>Del mar a la mesa.</em></p>
+      <p>Puerto Deportivo 12, Gijón<br>+34 985 11 22 33<br>Mar–Dom: 13:00–16:00 / 20:00–23:30 (Lunes cerrado)</p>
+
       <div class="botones-inicio">
-        <a class="boton" href="reservas.html">Reservas</a>
+        <a class="boton" href="reservas.html">Reservar mesa</a>
         <a class="boton" href="pedido-online.html">Pedir a domicilio</a>
         <a class="boton boton-secundario" href="galeria.html">Galería</a>
       </div>
     </section>
 
     <aside class="menu-lateral">
-      <button type="button" class="menu-cerrar" aria-label="Cerrar menú">×</button>
-      <p class="etiqueta" style="margin-bottom: 12px; color: var(--gris);">Explora Marea Alta</p>
+      <button type="button" class="menu-cerrar" aria-label="Cerrar menú">&times;</button>
+      <p class="etiqueta">Explora Marea Alta</p>
       <nav aria-label="Principal">
-        <a href="index.html">Inicio</a>
-        <a href="la-carta.html">La carta</a>
-        <a href="pedido-online.html">Pedido online</a>
-        <a href="reservas.html">Reservas</a>
-        <a href="nuestros-restaurantes.html">Nuestros restaurantes</a>
-        <a href="contacto-y-ubicacion.html">Contacto</a>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="la-carta.html">La carta</a></li>
+          <li><a href="pedido-online.html">Pedido online</a></li>
+          <li><a href="reservas.html">Reservas</a></li>
+          <li><a href="nuestros-restaurantes.html">Nuestros restaurantes</a></li>
+          <li><a href="contacto-y-ubicacion.html">Contacto</a></li>
+        </ul>
       </nav>
+      <p><small>DIW&amp;CO RESTAURANTES · Distintas mesas. Una misma pasión.</small></p>
     </aside>
   </main>
 
-  <div class="aviso-cookies" role="region" aria-label="Aviso de cookies">
-    <p><strong>Usamos cookies</strong> para mejorar tu experiencia y recordar tu pedido. Tú decides cuáles aceptar.</p>
+  <aside class="aviso-cookies" aria-label="Aviso de cookies">
+    <p><strong>Usamos cookies</strong> para mejorar tu experiencia y analizar la navegación. <a href="sobre-nosotros-y-legal.html#cookies">Más información</a></p>
     <div>
       <button type="button" class="boton" data-cookies="aceptar">Aceptar</button>
       <button type="button" class="boton boton-secundario" data-cookies="rechazar">Rechazar</button>
-      <a href="sobre-nosotros-y-legal.html#uso-cookies">Más información</a>
     </div>
-  </div>
+  </aside>
 
   <script src="../shared/js/vendor/jquery-4.1.0.min.js"></script>
   <script src="../shared/js/main.js"></script>

@@ -27,70 +27,60 @@
   </header>
 
   <main class="contenido">
-    <h1>Contacto y ubicación</h1>
-    <p class="subtitulo">Encuéntranos en el Puerto Deportivo de Gijón o escríbenos.</p>
-
-    <div class="dos-columnas iguales" style="margin-top: 32px;">
+    <div class="cabecera-pagina">
       <div>
-        <h2 style="margin-bottom: 18px;">Dónde estamos</h2>
-        <ul class="info-contacto">
-          <li><img src="../shared/img/iconos/ubicacion.svg" alt=""><span>Puerto Deportivo 12 · 33201 Gijón, Asturias</span></li>
-          <li><img src="../shared/img/iconos/telefono.svg" alt=""><span>+34 985 11 22 33</span></li>
-          <li><img src="../shared/img/iconos/email.svg" alt=""><span>hola@mareaalta.example</span></li>
-          <li><img src="../shared/img/iconos/horario.svg" alt=""><span>Mar–dom · 13:00–16:00 / 20:00–23:30 (Lunes cerrado)</span></li>
-        </ul>
-        <div class="mapa">
-          <iframe title="Mapa de ubicación de Marea Alta" src="https://www.openstreetmap.org/export/embed.html?bbox=-5.668%2C43.541%2C-5.658%2C43.547&amp;layer=mapnik&amp;marker=43.544%2C-5.663"></iframe>
-        </div>
+        <h1>Contacto y ubicación</h1>
+        <p class="subtitulo">Escríbenos para eventos privados, grupos o cualquier consulta sobre nuestra carta.</p>
       </div>
+    </div>
 
-      <form class="formulario-demo">
-        <h2>Escríbenos</h2>
-        <div class="dos-campos">
-          <label class="campo">Nombre *
-            <input type="text" name="nombre" required placeholder="Nombre y apellidos">
-          </label>
-          <label class="campo">Email *
-            <input type="email" name="email" required placeholder="nombre@ejemplo.com">
-          </label>
-        </div>
-        <label class="campo">Teléfono (opcional)
-          <input type="tel" name="telefono" placeholder="+34 600 000 000">
+    <div class="dos-columnas iguales">
+      <form class="formulario-demo" novalidate>
+        <label class="campo">Nombre *
+          <input type="text" name="nombre" required>
+        </label>
+        <label class="campo">Correo electrónico *
+          <input type="email" name="email" required>
         </label>
         <label class="campo">Asunto *
-          <select name="asunto" required>
-            <option value="">Selecciona un asunto</option>
-            <option value="consulta">Consulta</option>
-            <option value="sugerencia">Sugerencia</option>
-            <option value="reclamacion">Reclamación</option>
-            <option value="eventos">Eventos</option>
-          </select>
+          <input type="text" name="asunto" required>
         </label>
         <label class="campo">Mensaje *
-          <textarea name="mensaje" required placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+          <textarea name="mensaje" rows="4" required></textarea>
         </label>
-        <label class="casilla">
-          <input type="checkbox" name="privacidad" required>
-          <span>He leído y acepto la <a href="sobre-nosotros-y-legal.html#politica-privacidad">Política de privacidad</a>. *</span>
-        </label>
-        <button type="submit" class="boton boton-ancho">Enviar</button>
-        <p class="aviso" hidden>Mensaje enviado (prototipo). Te responderemos lo antes posible.</p>
+        <button type="submit" class="boton boton-ancho">Enviar mensaje</button>
+        <div class="aviso" data-exito="Mensaje enviado correctamente. Nuestro equipo te responderá lo antes posible." hidden>
+          Mensaje enviado correctamente. Nuestro equipo te responderá lo antes posible.
+        </div>
       </form>
+
+      <div>
+        <ul class="info-contacto">
+          <li><img src="../shared/img/iconos/ubicacion.svg" alt=""><span>Puerto Deportivo 12, 33201 Gijón, Asturias</span></li>
+          <li><img src="../shared/img/iconos/telefono.svg" alt=""><span>+34 985 11 22 33</span></li>
+          <li><img src="../shared/img/iconos/email.svg" alt=""><span>hola@mareaalta-diwco.es</span></li>
+          <li><img src="../shared/img/iconos/horario.svg" alt=""><span>Martes a Domingo: 13:00–16:00 y 20:00–23:30 (Lunes cerrado)</span></li>
+        </ul>
+
+        <div class="mapa">
+          <iframe title="Mapa de ubicación de Marea Alta en Gijón" src="https://www.openstreetmap.org/export/embed.html?bbox=-5.668%2C43.541%2C-5.658%2C43.547&amp;layer=mapnik&amp;marker=43.544%2C-5.663"></iframe>
+        </div>
+      </div>
     </div>
   </main>
 
   <footer class="pie">
     <div>
       <h2>Dirección y contacto</h2>
-      <p>Puerto Deportivo 12 · Gijón<br>+34 985 11 22 33</p>
+      <p>Puerto Deportivo 12, Gijón<br>+34 985 11 22 33</p>
     </div>
     <div>
       <h2>Redes sociales</h2>
-      <p class="redes"><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></p>
+      <p class="redes"><a href="#">Instagram</a> <a href="#">Facebook</a></p>
     </div>
     <div>
       <h2>Horarios</h2>
-      <p>Mar–dom · 13:00–16:00 / 20:00–23:30<br>Lunes cerrado</p>
+      <p>Mar–Dom: 13:00–16:00 / 20:00–23:30<br>Lunes cerrado</p>
     </div>
     <div>
       <h2><a href="sobre-nosotros-y-legal.html">Sobre nosotros y legal</a></h2>

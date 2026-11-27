@@ -29,91 +29,102 @@
   <main class="contenido">
     <div class="cabecera-pagina">
       <div>
-        <h1>Reservas</h1>
+        <h1>Reserva tu mesa</h1>
         <p class="subtitulo">Elige cuándo venir y reserva tu mesa en Marea Alta.</p>
       </div>
     </div>
 
-    <form id="form-reserva" class="dos-columnas formulario-demo">
-      <div>
+    <div class="dos-columnas">
+      <form id="form-reserva" class="formulario-demo" novalidate>
         <h2>Tu mesa</h2>
+
         <div class="dos-campos">
           <label class="campo">Fecha *
             <input type="date" name="fecha" required>
           </label>
           <label class="campo">Hora *
             <select name="hora" required>
-              <option value="">Selecciona hora</option>
+              <option value="">Selecciona una hora</option>
+              <option value="13:00">13:00</option>
               <option value="13:30">13:30</option>
+              <option value="14:00">14:00</option>
               <option value="14:30">14:30</option>
+              <option value="15:15">15:15</option>
+              <option value="20:00">20:00</option>
               <option value="20:30">20:30</option>
               <option value="21:30">21:30</option>
+              <option value="22:15">22:15</option>
             </select>
           </label>
         </div>
 
-        <div class="dos-campos" style="margin-top: 14px;">
-          <div>
-            <p style="font-size: .85rem; font-weight: 600; margin-bottom: 4px;">Comensales *</p>
-            <div class="contador">
-              <button type="button" data-paso="-1" aria-label="Quitar un comensal">−</button>
-              <output id="comensales">2</output>
-              <button type="button" data-paso="1" aria-label="Añadir un comensal">+</button>
-            </div>
-          </div>
-          <div>
-            <p style="font-size: .85rem; font-weight: 600; margin-bottom: 4px;">Zona *</p>
-            <div class="zona">
-              <label><input type="radio" name="zona" value="Interior" checked><span>Interior</span></label>
-              <label><input type="radio" name="zona" value="Exterior"><span>Exterior</span></label>
-            </div>
+        <div class="campo">
+          <span>Comensales *</span>
+          <div class="contador">
+            <button type="button" data-paso="-1" aria-label="Restar comensal">&minus;</button>
+            <output id="comensales">2</output>
+            <button type="button" data-paso="1" aria-label="Sumar comensal">+</button>
           </div>
         </div>
 
-        <h2 style="margin-top: 28px;">Tus datos</h2>
+        <div class="campo">
+          <span>Zona preferida</span>
+          <div class="zona">
+            <label><input type="radio" name="zona" value="Interior" checked><span>Salón interior</span></label>
+            <label><input type="radio" name="zona" value="Exterior"><span>Terraza al puerto</span></label>
+          </div>
+        </div>
+
+        <h2>Tus datos</h2>
+
         <div class="dos-campos">
           <label class="campo">Nombre *
-            <input type="text" name="nombre" required placeholder="Nombre y apellidos">
+            <input type="text" name="nombre" required>
           </label>
           <label class="campo">Teléfono *
-            <input type="tel" name="telefono" required placeholder="+34 600 000 000">
+            <input type="tel" name="telefono" required>
           </label>
         </div>
+
+        <label class="campo">Observaciones o alergias
+          <textarea name="notas" rows="3"></textarea>
+        </label>
 
         <label class="casilla">
           <input type="checkbox" name="privacidad" required>
-          <span>He leído y acepto la <a href="sobre-nosotros-y-legal.html#politica-privacidad">Política de privacidad</a>. *</span>
+          <span>He leído y acepto la <a href="sobre-nosotros-y-legal.html#privacidad">Política de privacidad</a>. *</span>
         </label>
-      </div>
+
+        <button type="submit" class="boton boton-ancho">Reservar mesa</button>
+        <div class="aviso" data-exito="¡Reserva confirmada! Te esperamos en Marea Alta (Puerto Deportivo 12, Gijón)." hidden>
+          ¡Reserva confirmada! Te esperamos en Marea Alta (Puerto Deportivo 12, Gijón).
+        </div>
+      </form>
 
       <aside class="resumen">
-        <h2>Resumen</h2>
-        <p style="font-weight: 600; margin-top: 10px;">Marea Alta</p>
-        <ul>
-          <li><span>Fecha</span><strong id="res-fecha">Por seleccionar</strong></li>
-          <li><span>Hora</span><strong id="res-hora">Por seleccionar</strong></li>
-          <li><span>Comensales</span><strong id="res-comensales">2 personas</strong></li>
-          <li><span>Zona</span><strong id="res-zona">Interior</strong></li>
-        </ul>
+        <h2>Resumen de tu reserva</h2>
+        <div class="linea-total"><span>Restaurante</span><span>Marea Alta</span></div>
+        <div class="linea-total"><span>Fecha</span><span id="res-fecha">—</span></div>
+        <div class="linea-total"><span>Hora</span><span id="res-hora">—</span></div>
+        <div class="linea-total"><span>Comensales</span><span id="res-comensales">2</span></div>
+        <div class="linea-total"><span>Zona</span><span id="res-zona">Interior</span></div>
         <p id="res-pendiente" class="nota">Completa los datos obligatorios para confirmar tu mesa.</p>
-        <button type="submit" class="boton boton-ancho">Reservar mesa</button>
-        <p class="aviso" hidden>Reserva confirmada (prototipo). Te esperamos en Marea Alta.</p>
       </aside>
-    </form>
+    </div>
   </main>
 
   <footer class="pie">
     <div>
       <h2>Dirección y contacto</h2>
-      <p>Puerto Deportivo 12 · Gijón<br>+34 985 11 22 33</p>
+      <p>Puerto Deportivo 12, Gijón<br>+34 985 11 22 33</p>
     </div>
     <div>
       <h2>Redes sociales</h2>
-      <p class="redes"><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></p>
+      <p class="redes"><a href="#">Instagram</a> <a href="#">Facebook</a></p>
     </div>
     <div>
       <h2>Horarios</h2>
-      <p>Mar–dom · 13:00–16:00 / 20:00–23:30<br>Lunes cerrado</p>
+      <p>Mar–Dom: 13:00–16:00 / 20:00–23:30<br>Lunes cerrado</p>
     </div>
     <div>
       <h2><a href="sobre-nosotros-y-legal.html">Sobre nosotros y legal</a></h2>

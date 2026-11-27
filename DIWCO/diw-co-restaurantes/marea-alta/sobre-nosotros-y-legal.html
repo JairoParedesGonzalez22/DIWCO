@@ -27,47 +27,47 @@
   </header>
 
   <main class="contenido">
-    <h1>Sobre nosotros y legal</h1>
+    <h1>Sobre nosotros y aviso legal</h1>
 
     <div class="documento">
-      <aside class="indice" aria-label="Índice de la página">
-        <p class="etiqueta" style="margin-bottom: 10px;">En esta página</p>
+      <aside class="indice">
         <ul>
-          <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
-          <li><a href="#politica-privacidad">Política de privacidad</a></li>
-          <li><a href="#uso-cookies">Uso de cookies</a></li>
+          <li><a href="#historia">Nuestra historia</a></li>
           <li><a href="#aviso-legal">Aviso legal</a></li>
+          <li><a href="#privacidad">Política de privacidad</a></li>
+          <li><a href="#cookies">Política de cookies</a></li>
         </ul>
       </aside>
 
       <div>
-        <section id="sobre-nosotros">
-          <h2>Sobre nosotros</h2>
-          <p>Nacido frente al Puerto Deportivo de Gijón, Marea Alta es un proyecto gastronómico de DIW&amp;CO Restaurantes dedicado al producto marino de lonja, las brasas tradicionales y el respeto por la temporalidad del mar Cantábrico.</p>
-          <p>Nuestro equipo selecciona cada mañana pescados salvajes y mariscos de proximidad para elaborar una cocina honesta, pensada para disfrutarse sin prisas.</p>
-        </section>
-
-        <section id="politica-privacidad">
-          <h2>Política de privacidad</h2>
-          <p>En Marea Alta tratamos los datos personales facilitados en nuestros formularios únicamente para gestionar reservas, pedidos online y consultas de clientes, sin cederlos a terceros salvo obligación legal.</p>
-        </section>
-
-        <section id="uso-cookies">
-          <h2>Uso de cookies</h2>
-          <p>Este sitio web utiliza almacenamiento local técnico para recordar los platos añadidos a tu pedido online y tus preferencias sobre el aviso de cookies.</p>
-          <button type="button" id="btn-cookies" class="boton">Configurar cookies</button>
-
-          <div id="panel-cookies" class="panel-cookies" hidden>
-            <label class="casilla"><input type="checkbox" checked disabled> <span>Cookies técnicas (obligatorias)</span></label>
-            <label class="casilla"><input type="checkbox" id="cookie-analiticas"> <span>Cookies analíticas</span></label>
-            <button type="button" id="guardar-cookies" class="boton">Guardar preferencias</button>
-            <p id="cookies-ok" class="aviso" hidden>Preferencias de cookies guardadas correctamente.</p>
-          </div>
+        <section id="historia">
+          <h2>Nuestra historia</h2>
+          <img src="img/galeria-1.jpg" alt="Interior del restaurante Marea Alta">
+          <p>En <strong>Marea Alta</strong> entendemos la cocina marinera como un homenaje diario al mar Cantábrico, el respeto al producto de lonja y el punto exacto de la brasa. Seleccionamos cada mañana pescados salvajes y mariscos frescos de costa.</p>
+          <p>Formamos parte del grupo <strong>DIW&amp;CO Restaurantes</strong>, un proyecto gastronómico nacido en Asturias con el compromiso de ofrecer una hospitalidad cercana y cocina honesta.</p>
         </section>
 
         <section id="aviso-legal">
           <h2>Aviso legal</h2>
-          <p>Titular del sitio web: Restaurante Marea Alta (Proyecto académico DIW&amp;CO Restaurantes). Domicilio en Puerto Deportivo 12, 33201 Gijón, Asturias.</p>
+          <p>Titularidad ficticia con fines académicos: DIW&amp;CO Restaurantes S.L. · Puerto Deportivo 12, 33201 Gijón (Asturias). Todos los datos de contacto, precios y reservas mostrados en este sitio web son de ejemplo.</p>
+        </section>
+
+        <section id="privacidad">
+          <h2>Política de privacidad</h2>
+          <p>Los datos introducidos en los formularios de reserva, pedido online y contacto se procesan únicamente en el navegador del usuario con fines de demostración y no se envían a servidores externos.</p>
+        </section>
+
+        <section id="cookies">
+          <h2>Política de cookies</h2>
+          <p>Utilizamos almacenamiento local del navegador (<code>localStorage</code>) para recordar tu selección de cookies y conservar tu carrito de pedido online mientras navegas entre páginas.</p>
+          <button type="button" id="btn-cookies" class="boton">Configurar cookies</button>
+
+          <div id="panel-cookies" class="panel-cookies" hidden>
+            <label><input type="checkbox" checked disabled> Cookies técnicas necesarias (siempre activas)</label>
+            <label><input type="checkbox" id="chk-analiticas"> Cookies analíticas y de preferencias</label>
+            <button type="button" id="guardar-cookies" class="boton">Guardar preferencias</button>
+            <div id="cookies-ok" class="aviso" hidden>Preferencias de cookies guardadas correctamente.</div>
+          </div>
         </section>
       </div>
     </div>
@@ -76,15 +76,15 @@
   <footer class="pie">
     <div>
       <h2>Dirección y contacto</h2>
-      <p>Puerto Deportivo 12 · Gijón<br>+34 985 11 22 33</p>
+      <p>Puerto Deportivo 12, Gijón<br>+34 985 11 22 33</p>
     </div>
     <div>
       <h2>Redes sociales</h2>
-      <p class="redes"><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></p>
+      <p class="redes"><a href="#">Instagram</a> <a href="#">Facebook</a></p>
     </div>
     <div>
       <h2>Horarios</h2>
-      <p>Mar–dom · 13:00–16:00 / 20:00–23:30<br>Lunes cerrado</p>
+      <p>Mar–Dom: 13:00–16:00 / 20:00–23:30<br>Lunes cerrado</p>
     </div>
     <div>
       <h2><a href="sobre-nosotros-y-legal.html">Sobre nosotros y legal</a></h2>

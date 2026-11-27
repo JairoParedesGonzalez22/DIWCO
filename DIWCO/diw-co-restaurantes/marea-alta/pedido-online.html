@@ -30,70 +30,84 @@
     <div class="cabecera-pagina">
       <div>
         <h1>Pedido online</h1>
-        <p class="subtitulo">Elige tus platos y recógelos en el local o recíbelos a domicilio.</p>
-      </div>
-      <div class="filtros">
-        <button type="button" class="boton boton-secundario" data-modo="recoger">Recoger en tienda</button>
-        <button type="button" class="boton boton-secundario activo" data-modo="domicilio">Entrega a domicilio</button>
+        <p class="subtitulo">Selecciona tus pescados, mariscos y arroces para recoger en el local o recibir a domicilio.</p>
       </div>
     </div>
 
-    <div class="pedido">
+    <form id="form-pedido" class="pedido" novalidate>
       <div>
         <div id="filtros-pedido" class="filtros">
-          <button type="button" class="boton boton-secundario" data-filtro="Entrantes" aria-pressed="false">Entrantes</button>
-          <button type="button" class="boton boton-secundario" data-filtro="Principales" aria-pressed="false">Principales</button>
-          <button type="button" class="boton boton-secundario" data-filtro="Postres" aria-pressed="false">Postres</button>
-          <button type="button" class="boton boton-secundario" data-filtro="Bebidas" aria-pressed="false">Bebidas</button>
+          <button type="button" class="boton boton-secundario activo" data-filtro="todo">Todos</button>
+          <button type="button" class="boton boton-secundario" data-filtro="Entrantes">Entrantes</button>
+          <button type="button" class="boton boton-secundario" data-filtro="Principales">Principales</button>
+          <button type="button" class="boton boton-secundario" data-filtro="Postres">Postres</button>
+          <button type="button" class="boton boton-secundario" data-filtro="Bebidas">Bebidas</button>
         </div>
+
         <div id="lista-pedido"></div>
       </div>
 
-      <form id="form-pedido" class="resumen" novalidate>
+      <aside class="resumen">
         <h2>Tu pedido</h2>
-        <p class="nota"><span id="modo-actual">Entrega a domicilio</span> · <span id="unidades">0 unidades</span></p>
+
+        <div class="filtros">
+          <button type="button" class="boton boton-secundario activo" data-modo="recoger">Recoger en tienda</button>
+          <button type="button" class="boton boton-secundario" data-modo="domicilio">Entrega a domicilio</button>
+        </div>
+
         <ul id="lineas-pedido"></ul>
 
+        <div class="linea-total"><span>Unidades</span><span id="unidades">0</span></div>
+        <div class="linea-total"><span>Modalidad</span><span id="modo-actual">Recoger</span></div>
         <div class="linea-total"><span>Subtotal</span><span id="subtotal">0,00 €</span></div>
         <div class="linea-total"><span>Envío</span><span id="envio">0,00 €</span></div>
         <div class="linea-total final"><span>Total</span><span id="total">0,00 €</span></div>
+        <p class="nota">IVA incluido · Sin costes adicionales</p>
 
-        <div class="solo-domicilio">
-          <label class="campo">Dirección de entrega *
-            <input type="text" name="direccion" required placeholder="Calle, número, piso y CP">
-          </label>
-          <label class="campo">Teléfono *
-            <input type="tel" name="telefono" required placeholder="+34 600 000 000">
-          </label>
-        </div>
+        <h3>Datos de entrega</h3>
+
+        <label class="campo">Nombre completo *
+          <input type="text" name="nombre" required>
+        </label>
+
+        <label class="campo solo-domicilio" hidden>Dirección de entrega *
+          <input type="text" name="direccion" placeholder="Calle, número, piso y código postal">
+        </label>
+
+        <label class="campo">Teléfono *
+          <input type="tel" name="telefono" placeholder="Ej.: +34 000 000 000" required>
+        </label>
 
         <label class="campo">Seleccionar hora *
           <select name="hora" required>
-            <option value="14:00">Hoy, 14:00</option>
-            <option value="14:30">Hoy, 14:30</option>
-            <option value="21:00">Hoy, 21:00</option>
-            <option value="21:30">Hoy, 21:30</option>
+            <option value="">Selecciona una hora</option>
+            <option value="13:30">13:30</option>
+            <option value="14:15">14:15</option>
+            <option value="15:00">15:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:15">21:15</option>
+            <option value="22:00">22:00</option>
           </select>
         </label>
 
         <button type="submit" class="boton boton-ancho">Confirmar pedido</button>
-        <p id="mensaje-pedido" class="aviso" hidden></p>
-      </form>
-    </div>
+        <div id="mensaje-pedido" class="aviso" hidden></div>
+      </aside>
+    </form>
   </main>
 
   <footer class="pie">
     <div>
       <h2>Dirección y contacto</h2>
-      <p>Puerto Deportivo 12 · Gijón<br>+34 985 11 22 33</p>
+      <p>Puerto Deportivo 12, Gijón<br>+34 985 11 22 33</p>
     </div>
     <div>
       <h2>Redes sociales</h2>
-      <p class="redes"><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></p>
+      <p class="redes"><a href="#">Instagram</a> <a href="#">Facebook</a></p>
     </div>
     <div>
       <h2>Horarios</h2>
-      <p>Mar–dom · 13:00–16:00 / 20:00–23:30<br>Lunes cerrado</p>
+      <p>Mar–Dom: 13:00–16:00 / 20:00–23:30<br>Lunes cerrado</p>
     </div>
     <div>
       <h2><a href="sobre-nosotros-y-legal.html">Sobre nosotros y legal</a></h2>
