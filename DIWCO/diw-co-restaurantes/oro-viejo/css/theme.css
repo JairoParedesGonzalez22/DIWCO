@@ -1,0 +1,15 @@
+/* theme.css de ORO VIEJO: solo lo que cambia respecto a los demás restaurantes */
+:root {
+  --acento: #8A6A2F;
+  --acento-texto: #FFFFFF;
+  --imagen-inicio: url('../img/inicio.png');
+}
+.inicio-imagen {
+  background-image: var(--imagen-inicio);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.pie .redes img {
+  filter: brightness(0) invert(1);
+}
