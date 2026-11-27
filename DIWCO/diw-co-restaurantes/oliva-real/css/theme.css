@@ -34,6 +34,16 @@ main {
   background: none;
 }
 
+/* Imagen de la historia con estilo banner */
+#historia img {
+  width: 100%;
+  height: 320px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  margin: 16px 0;
+}
+
 @media (max-width: 900px) {
   .inicio {
     grid-template-columns: 1fr;
