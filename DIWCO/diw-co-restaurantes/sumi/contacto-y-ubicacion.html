@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contacto y ubicación · SUMI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../shared/css/base.css" />
+    <link rel="stylesheet" href="../shared/css/components.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+  </head>
+  <body data-sitio="sumi">
+    <header class="cabecera">
+      <a class="logo" href="index.html"
+        ><img src="img/logo.png" alt="Logotipo de SUMI"
+      /></a>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="la-carta.html">La carta</a></li>
+          <li><a href="pedido-online.html">Pedido online</a></li>
+          <li><a href="reservas.html">Reservas</a></li>
+          <li>
+            <a href="nuestros-restaurantes.html">Nuestros restaurantes</a>
+          </li>
+          <li><a href="contacto-y-ubicacion.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="contenido">
+      <div class="cabecera-pagina">
+        <div>
+          <h1>Contacto y ubicación</h1>
+          <p class="subtitulo">Escríbenos o ven a visitarnos.</p>
+        </div>
+      </div>
+
+      <div class="dos-columnas iguales">
+        <form class="formulario-demo">
+          <h2>Envíanos un mensaje</h2>
+          <label class="campo"
+            >Nombre
+            <input type="text" name="nombre" autocomplete="name" required />
+          </label>
+          <label class="campo"
+            >Correo electrónico
+            <input type="email" name="email" autocomplete="email" required />
+          </label>
+          <label class="campo"
+            >Mensaje
+            <textarea name="mensaje" required></textarea>
+          </label>
+          <label class="casilla">
+            <input type="checkbox" name="privacidad" required />
+            <span
+              >Acepto la
+              <a href="sobre-nosotros-y-legal.html#privacidad"
+                >política de privacidad</a
+              >.</span
+            >
+          </label>
+          <button type="submit" class="boton boton-ancho">
+            Enviar mensaje
+          </button>
+          <p class="aviso" role="status" hidden>
+            Mensaje recibido (prototipo). ¡Gracias!
+          </p>
+        </form>
+
+        <div>
+          <h2>Dónde estamos</h2>
+          <ul class="info-contacto">
+            <li>
+              <img src="img/iconos/ubicacion.svg" alt="Dirección" /><span
+                >Calle Gascona, 12<br />33001 Oviedo, Asturias</span
+              >
+            </li>
+            <li>
+              <img src="img/iconos/telefono.svg" alt="Teléfono" /><a
+                href="tel:+34985000000"
+                >985 00 00 00</a
+              >
+            </li>
+            <li>
+              <img src="img/iconos/email.svg" alt="Correo" /><a
+                href="mailto:hola@sumirestaurantes.es"
+                >hola@sumirestaurantes.es</a
+              >
+            </li>
+            <li>
+              <img src="img/iconos/horario.svg" alt="Horario" /><span
+                >Mar–Dom: 13:00–16:00 y 20:00–23:30<br />Cerrado los lunes</span
+              >
+            </li>
+          </ul>
+          <div class="mapa">
+            <iframe
+              title="Mapa con la ubicación de SUMI"
+              loading="lazy"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-5.8520%2C43.3590%2C-5.8420%2C43.3650&amp;layer=mapnik"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="pie">
+      <div>
+        <h2>Dirección y contacto</h2>
+        <p>
+          <img src="img/iconos/ubicacion.svg" alt="" />Calle Gascona, 12 · 33001
+          Oviedo<br />
+          <img src="img/iconos/telefono.svg" alt="" />985 00 00 00<br />
+          <img src="img/iconos/email.svg" alt="" />hola@sumirestaurantes.es
+        </p>
+      </div>
+      <div>
+        <h2>Redes sociales</h2>
+        <p class="redes">
+          <a href="#" aria-label="Instagram de SUMI"
+            ><img src="img/iconos/instagram.svg" alt=""
+          /></a>
+          <a href="#" aria-label="Facebook de SUMI"
+            ><img src="img/iconos/facebook.svg" alt=""
+          /></a>
+        </p>
+      </div>
+      <div>
+        <h2>Horarios</h2>
+        <p>
+          <img src="img/iconos/horario.svg" alt="" />Mar–Dom: 13:00–16:00 y
+          20:00–23:30<br />Cerrado los lunes
+        </p>
+      </div>
+      <div>
+        <h2>
+          <a href="sobre-nosotros-y-legal.html">Sobre nosotros y legal</a>
+        </h2>
+        <p>
+          <a href="galeria.html">Galería</a><br /><a
+            href="sobre-nosotros-y-legal.html#privacidad"
+            >Política de privacidad</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script src="../shared/js/vendor/jquery-4.1.0.min.js"></script>
+    <script src="../shared/js/main.js"></script>
+    <script src="../shared/js/formularios.js"></script>
+  </body>
+</html>
