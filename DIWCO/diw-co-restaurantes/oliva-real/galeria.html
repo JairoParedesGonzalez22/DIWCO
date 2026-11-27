@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galería · Noble Brasa</title>
+  <link rel="icon" href="img/logo.png" type="image/png" class="logo-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/css/base.css">
+  <link rel="stylesheet" href="../shared/css/components.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body data-sitio="noble-brasa">
+
+  <header class="cabecera">
+    <a class="logo" href="index.html"><img src="img/logo.png" alt="Logotipo de Noble Brasa"></a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="la-carta.html">La carta</a></li>
+        <li><a href="pedido-online.html">Pedido online</a></li>
+        <li><a href="reservas.html">Reservas</a></li>
+        <li><a href="nuestros-restaurantes.html">Nuestros restaurantes</a></li>
+        <li><a href="contacto-y-ubicacion.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido">
+    <div class="cabecera-pagina">
+      <div>
+        <h1>Galería</h1>
+        <p class="subtitulo">Nuestro salón, el fuego de encina y los cortes que salen cada día de la parrilla.</p>
+      </div>
+      <div id="filtros-galeria" class="filtros">
+        <button type="button" class="boton boton-secundario activo" data-filtro="todo">Todas</button>
+        <button type="button" class="boton boton-secundario" data-filtro="local">Nuestro Local</button>
+        <button type="button" class="boton boton-secundario" data-filtro="platos">Nuestros platos</button>
+      </div>
+    </div>
+
+    <div class="galeria">
+      <button type="button" class="foto" data-categoria="local"><img src="img/local/sala.jpg" alt="Salón de Oliva Real"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/platos/coulant-chocolate.jpg" alt="Coulant de chocolate negro"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/platos/paella-valenciana.jpg" alt="Paella valenciana"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/platos/fideua.jpg" alt="Fideuá mediterránea"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/platos/arroz-negro.jpg" alt="Arroz negro"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/platos/arroz-senyoret.jpg" alt="Arroz del senyoret"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/platos/arroz-setas-pollo.jpg" alt="Arroz meloso de setas y pollo"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/platos/patatas-bravas.jpg" alt="Patatas bravas"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/platos/croquetas.jpg" alt="Croquetas de jamón ibérico"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/platos/pan-tomate.jpg" alt="Pan con tomate"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/platos/escalivada.jpg" alt="Escalivada mediterránea"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/platos/gambas-ajillo.jpg" alt="Gambas al ajillo"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/platos/ensalada-mediterranea.jpg" alt="Ensalada mediterránea"></button>        <button type="button" class="foto" data-categoria="platos"><img src="img/platos/pollo-parrilla.jpg" alt="Pollo a la parrilla"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/platos/secreto-iberico.jpg" alt="Secreto ibérico"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/platos/bacalao-horno.jpg" alt="Bacalao al horno"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/platos/albondigas.jpg" alt="Albóndigas caseras"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/platos/crema-catalana.jpg" alt="Crema catalana"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/platos/tarta-queso.jpg" alt="Tarta de queso"></button>
+    </div>
+  </main>
+
+  <div class="visor" hidden>
+    <button type="button" class="visor-cerrar" aria-label="Cerrar">&times;</button>
+    <button type="button" class="visor-anterior" aria-label="Anterior">&lsaquo;</button>
+    <img class="visor-img" src="" alt="">
+    <button type="button" class="visor-siguiente" aria-label="Siguiente">&rsaquo;</button>
+  </div>
+
+  <footer class="pie">
+    <div>
+      <h2>Dirección y contacto</h2>
+      <p>Av. Rufo Garcia Rendueles 3 · Gijón<br>+34 985 44 55 66</p>
+    </div>
+ <div>
+      <h2>Redes sociales</h2>
+      <p class="redes">
+        <a href="https://instagram.com" target="_blank" rel="noopener">
+          <img src="../shared/img/iconos/instagram.svg" alt="Instagram" width="22" height="22">
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener">
+          <img src="../shared/img/iconos/facebook.svg" alt="Facebook" width="22" height="22">
+        </a>
+      </p>
+    </div>
+    <div>
+      <h2>Horarios</h2>
+      <p>Lun–Vier: 13:00–16:00 / 20:00–23:30<br>Sáb–Dom: 13:00–15:30 / 20:00–01:00</p>
+    </div>
+    <div>
+      <h2><a href="sobre-nosotros-y-legal.html">Sobre nosotros y legal</a></h2>
+      <p><a href="galeria.html">Galería</a></p>
+    </div>
+  </footer>
+
+  <script src="../shared/js/vendor/jquery-4.1.0.min.js"></script>
+  <script src="../shared/js/main.js"></script>
+  <script src="../shared/js/galeria.js"></script>
+</body>
+</html>
