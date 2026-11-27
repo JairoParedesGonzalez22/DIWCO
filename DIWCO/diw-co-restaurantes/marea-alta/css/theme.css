@@ -1,0 +1,9 @@
+:root {
+  --acento: #14284B;
+  --acento-texto: #FFFFFF;
+  --imagen-inicio: url('../img/inicio.jpg');
+}
+
+.inicio-imagen {
+  background-image: url('../img/inicio.jpg');
+}
