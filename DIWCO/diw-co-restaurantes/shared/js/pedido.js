@@ -116,7 +116,7 @@ $(function () {
     carrito = {};
     this.reset();
     pintar();
-    mensaje('Pedido recibido (prototipo). ¡Gracias!', true);
+    mensaje('Pedido recibido. ¡Gracias!', true);
   });
 
   // Filtros por categoría
