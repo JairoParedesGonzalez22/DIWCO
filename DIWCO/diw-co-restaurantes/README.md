@@ -79,12 +79,12 @@ Más detalle en [`shared/README.md`](shared/README.md).
 
 | Restaurante | Responsable | Estado |
 |---|---|---|
-| Oro Viejo | Jairo | Código hecho; faltan fotos de platos y galería |
-| Noble Brasa | | Pendiente |
-| Marea Alta | | Pendiente |
-| Oliva Real | | Pendiente |
-| Sumi | | Pendiente |
+| Oro Viejo | Jairo | Completado |
+| Noble Brasa | Jose Miguel | Completado |
+| Marea Alta | Joel | Completado |
+| Oliva Real | Alex | Pendiente |
+| Sumi | German | Pendiente |
 
 ## Documentación
 
-La memoria del reto está en el documento `DIWCO_LOS_DEL_FONDO.docx`: definición, guía de estilo, sketching y wireframing, CMS (WordPress y Wix), implementación en código y presupuesto.
+La memoria del reto está en el documento `DIWCO_LOS_DEL_FONDO.pdf`: definición, guía de estilo, sketching y wireframing, CMS (WordPress y Wix), implementación en código y presupuesto.
