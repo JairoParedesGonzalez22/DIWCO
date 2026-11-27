@@ -1,82 +1,107 @@
-<!doctype html>
-<!-- ============================================================
-   SOBRE NOSOTROS - Oliva Real (DIW&CO)
-   Página informativa con 4 secciones ancladas: Sobre nosotros, Privacidad, Cookies, Aviso legal.
-   Estructura: header + main.contenedor > h1 + .sobre-layout(.sobre-nav + .sobre-contenido)
-   Aside: .sobre-nav con enlaces ancla a #ids
-   Contenido: 4 <section class="sobre-seccion" id="..."> con h2 + contenido
-   JS: solo para botón "Configurar cookies" (limpia localStorage y recarga)
-   ============================================================ -->
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
-    <title>Sobre nosotros y legal | Oliva Real</title>
-    <link rel="icon" href="img/logo.png" type="image/png">
-    <link rel="stylesheet" href="css/tema.css">
-    <link rel="stylesheet" href="css/estilos.css">
-  </head>
-  <body>
-    <header class="cabecera">
-      <a href="index.html" class="cabecera-logo"><img src="img/logo.png" alt="Logo Oliva-Real"></a>
-      <nav class="menu-principal">
-        <a href="index.html">Inicio</a>
-        <a href="la-carta.html">La carta</a>
-        <a href="pedido-online.html">Pedido online</a>
-        <a href="reservas.html">Reservas</a>
-        <a href="nuestros-restaurantes.html">Nuestros restaurantes</a>
-        <a href="contacto.html">Contacto</a>
-      </nav>
-    </header>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre nosotros y legal · Oliva Real</title>
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/css/base.css">
+  <link rel="stylesheet" href="../shared/css/components.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body data-sitio="oliva-real">
 
-    <main class="contenedor">
-      <h1 class="titulo-pagina">Sobre nosotros y legal</h1>
+  <header class="cabecera">
+    <a class="logo" href="index.html"><img src="img/logo.png" alt="Logotipo de Oliva Real"></a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="la-carta.html">La carta</a></li>
+        <li><a href="pedido-online.html">Pedido online</a></li>
+        <li><a href="reservas.html">Reservas</a></li>
+        <li><a href="nuestros-restaurantes.html">Nuestros restaurantes</a></li>
+        <li><a href="contacto-y-ubicacion.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-      <div class="sobre-layout">
-        <aside class="sobre-nav">
-          <p class="sobre-nav__title">EN ESTA PÁGINA</p>
-          <div class="sobre-nav__list">
-            <a href="#sobre-nosotros" class="sobre-nav__link">Sobre nosotros</a>
-            <a href="#politica-privacidad" class="sobre-nav__link">Política de privacidad</a>
-            <a href="#uso-cookies" class="sobre-nav__link">Uso de cookies</a>
-            <a href="#aviso-legal" class="sobre-nav__link">Aviso legal</a>
+  <main class="contenido">
+    <h1>Sobre nosotros y aviso legal</h1>
+
+    <div class="documento">
+      <aside class="indice">
+        <ul>
+          <li><a href="#historia">Nuestra historia</a></li>
+          <li><a href="#aviso-legal">Aviso legal</a></li>
+          <li><a href="#privacidad">Política de privacidad</a></li>
+          <li><a href="#cookies">Política de cookies</a></li>
+        </ul>
+      </aside>
+
+      <div>
+        <section id="historia">
+          <h2>Nuestra historia</h2>
+          <p>En <strong>Oliva Real</strong> celebramos la cocina mediterránea con arroces tradicionales, producto fresco y sabores de temporada. Cada plato se prepara con ingredientes de proximidad y el cuidado de un equipo que invita a disfrutar de la mesa sin prisas.</p>
+          <p>Formamos parte del grupo <strong>DIW&amp;CO Restaurantes</strong>, un proyecto gastronómico nacido en Asturias con el compromiso de ofrecer una hospitalidad cercana y cocina honesta.</p>
+          <img src="img/local/sala.jpg" alt="Interior del restaurante Oliva Real">
+        </section>
+
+        <section id="aviso-legal">
+          <h2>Aviso legal</h2>
+          <p>Titularidad ficticia con fines académicos: DIW&amp;CO Restaurantes S.L. · Av. Rufo García Rendueles 3, 33206 Gijón (Asturias). Todos los datos de contacto, precios y reservas mostrados en este sitio web son de ejemplo.</p>
+        </section>
+
+        <section id="privacidad">
+          <h2>Política de privacidad</h2>
+          <p>Los datos introducidos en los formularios de reserva, pedido online y contacto se procesan únicamente en el navegador del usuario con fines de demostración y no se envían a servidores externos.</p>
+        </section>
+
+        <section id="cookies">
+          <h2>Política de cookies</h2>
+          <p>Utilizamos almacenamiento local del navegador (<code>localStorage</code>) para recordar tu selección de cookies y conservar tu carrito de pedido online mientras navegas entre páginas.</p>
+          <button type="button" id="btn-cookies" class="boton" aria-controls="panel-cookies" aria-expanded="false">Configurar cookies</button>
+
+          <div id="panel-cookies" class="panel-cookies" hidden>
+            <label><input type="checkbox" checked disabled> Cookies técnicas necesarias (siempre activas)</label>
+            <label><input type="checkbox" id="chk-analiticas"> Cookies analíticas y de preferencias</label>
+            <button type="button" id="guardar-cookies" class="boton">Guardar preferencias</button>
+            <div id="cookies-ok" class="aviso" role="status" hidden>Preferencias de cookies guardadas correctamente.</div>
           </div>
-        </aside>
-
-        <div class="sobre-contenido">
-          <section id="sobre-nosotros" class="sobre-seccion">
-            <h2>Sobre nosotros</h2>
-            <img src="img/local/sala.jpg" alt="Sala Oliva Real">
-            <p>Nacido frente al puerto deportivo de Gijón, Oliva Real es un proyecto gastronómico dedicado a la cocina mediterránea, arroces tradicionales y el respeto por el producto de temporada.</p>
-            <p>Nuestro equipo elabora cada plato con ingredientes frescos de proximidad para ofrecer una cocina honesta, pensada para disfrutarse sin prisas.</p>
-          </section>
-
-          <section id="politica-privacidad" class="sobre-seccion">
-            <h2>Política de privacidad</h2>
-            <p>En Oliva Real tratamos los datos personales facilitados en nuestros formularios únicamente para gestionar reservas, pedidos online y consultas de clientes, sin cederlos a terceros salvo obligación legal.</p>
-          </section>
-
-          <section id="uso-cookies" class="sobre-seccion">
-            <h2>Uso de cookies</h2>
-            <p>Este sitio web utiliza cookies técnicas para recordar la selección de tu carrito y tus preferencias de navegación.</p>
-            <button type="button" class="btn-primario" onclick="localStorage.removeItem('cookies_diwco'); location.reload();">Configurar cookies</button>
-          </section>
-
-          <section id="aviso-legal" class="sobre-seccion">
-            <h2>Aviso legal</h2>
-            <p>Titular del sitio web: Restaurante Oliva Real (Proyecto académico DIW&CO Restaurantes). Domicilio: Av. Rufo García Rendueles 3, 33201 Gijón, Asturias.</p>
-          </section>
-        </div>
+        </section>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <footer class="pie-pagina">
-      <div class="pie-grid">
-        <div><h4>Dirección y contacto</h4><p>Av. Rufo Garcia Rendueles 3, Gijón</p><p>+34 985 44 55 66</p></div>
-        <div><h4>Redes sociales</h4><p><a href="https://instagram.com" target="_blank">Instagram</a> · <a href="https://facebook.com" target="_blank">Facebook</a></p></div>
-        <div><h4>Horarios</h4><p>Lun–Vie · 13:00–16:00 / 20:00–23:30</p><p>Sáb–Dom · 13:00–15:30 / 20:00-1:00</p></div>
-        <div><h4><a href="sobre-nosotros.html">Sobre nosotros y legal</a></h4><p><a href="galeria.html">Galería</a></p></div>
-      </div>
-    </footer>
-  </body>
+  <footer class="pie">
+    <div>
+      <h2>Dirección y contacto</h2>
+      <p>Av. Rufo Garcia Rendueles 3 · Gijón<br>+34 985 44 55 66</p>
+    </div>
+    <div>
+      <h2>Redes sociales</h2>
+      <p class="redes">
+        <a href="https://instagram.com" target="_blank" rel="noopener">
+          <img src="../shared/img/iconos/instagram.svg" alt="Instagram" width="22" height="22">
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener">
+          <img src="../shared/img/iconos/facebook.svg" alt="Facebook" width="22" height="22">
+        </a>
+      </p>
+    </div>
+    <div>
+      <h2>Horarios</h2>
+      <p>Lun–Vie: 13:00–16:00 / 20:00–23:30<br>Sáb–Dom: 13:00–15:30 / 20:00–01:00</p>
+    </div>
+    <div>
+      <h2><a href="sobre-nosotros-y-legal.html">Sobre nosotros y legal</a></h2>
+      <p><a href="galeria.html">Galería</a></p>
+    </div>
+  </footer>
+
+  <script src="../shared/js/vendor/jquery-4.1.0.min.js"></script>
+  <script src="../shared/js/main.js"></script>
+  <script src="../shared/js/legal.js"></script>
+</body>
 </html>
