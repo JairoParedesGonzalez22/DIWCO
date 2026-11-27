@@ -4,11 +4,6 @@
   --imagen-inicio: url('../img/inicio.jpg');
 }
 
-.logo img,
-.restaurantes img {
-  border-radius: 50%;
-  object-fit: cover;
-}
 .inicio-imagen {
   background-image: url('../img/inicio.jpg') !important;
   background-size: cover;
