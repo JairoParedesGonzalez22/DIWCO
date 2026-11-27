@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reservas · Oro Viejo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/css/base.css">
+  <link rel="stylesheet" href="../shared/css/components.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body data-sitio="oro-viejo">
+  <header class="cabecera">
+    <a class="logo" href="index.html"><img src="img/logo.png" alt="Logotipo de Oro Viejo"></a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="la-carta.html">La carta</a></li>
+        <li><a href="pedido-online.html">Pedido online</a></li>
+        <li><a href="reservas.html">Reservas</a></li>
+        <li><a href="nuestros-restaurantes.html">Nuestros restaurantes</a></li>
+        <li><a href="contacto-y-ubicacion.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="contenido">
+    <div class="cabecera-pagina">
+      <div>
+        <h1>Reservas</h1>
+        <p class="subtitulo">Elige cuándo venir y reserva tu mesa en Oro Viejo.</p>
+      </div>
+      <p class="nota">Todos los campos son obligatorios (*)</p>
+    </div>
+    <form class="dos-columnas formulario-demo" id="form-reserva">
+      <div>
+        <h2>Tu mesa</h2>
+        <div class="dos-campos">
+          <label class="campo">Fecha *<input type="date" name="fecha" required></label>
+          <label class="campo">Hora *
+            <select name="hora" required>
+              <option value="">Selecciona una hora</option>
+              <option>14:00 a 15:00</option>
+              <option>15:00 a 16:00</option>
+              <option>21:00 a 22:30</option>
+              <option>22:30 a 00:00</option>
+            </select>
+          </label>
+          <div class="campo">Comensales *
+            <div class="contador">
+              <button type="button" data-paso="-1" aria-label="Menos comensales">−</button>
+              <output id="comensales">2</output>
+              <button type="button" data-paso="1" aria-label="Más comensales">+</button>
+            </div>
+          </div>
+          <fieldset class="campo" style="border:0;padding:0;margin-inline:0">
+            <legend style="padding:0">Zona *</legend>
+            <div class="zona">
+              <label><input type="radio" name="zona" value="Interior" checked><span>Interior</span></label>
+              <label><input type="radio" name="zona" value="Exterior"><span>Exterior</span></label>
+            </div>
+          </fieldset>
+        </div>
+        <h2 style="margin-top:24px">Tus datos</h2>
+        <div class="dos-campos">
+          <label class="campo">Nombre *<input name="nombre" required autocomplete="name"></label>
+          <label class="campo">Teléfono *<input type="tel" name="telefono" required autocomplete="tel"></label>
+        </div>
+        <label class="casilla"><input type="checkbox" required><span>He leído y acepto la <a href="sobre-nosotros-y-legal.html#privacidad">Política de privacidad</a>. *</span></label>
+        <button type="submit" class="boton boton-ancho">Reservar mesa</button>
+        <p class="aviso" role="status" hidden>Reserva recibida. Recibiras un mensaje de confirmación. ¡Gracias!</p>
+      </div>
+      <aside class="resumen">
+        <h2>Resumen</h2>
+        <div class="linea-total"><span>Fecha</span><strong id="res-fecha">Por seleccionar</strong></div>
+        <div class="linea-total"><span>Hora</span><strong id="res-hora">Por seleccionar</strong></div>
+        <div class="linea-total"><span>Comensales</span><strong id="res-comensales">2 personas</strong></div>
+        <div class="linea-total"><span>Zona</span><strong id="res-zona">Interior</strong></div>
+        <p class="nota" id="res-pendiente">Pendiente de completar: selecciona fecha y hora e indica tus datos.</p>
+      </aside>
+    </form>
+  </main>
+  <footer class="pie">
+    <div><h2>Dirección y contacto</h2><p>Calle San Bernardo 73, Gijón<br>+34 985 00 00 00</p></div>
+<div> <h2>Redes sociales</h2> <p class="redes"> <a href="https://instagram.com" target="_blank" rel="noopener"> <img src="../shared/img/iconos/instagram.svg" alt="Instagram" width="22" height="22"> </a> <a href="https://facebook.com" target="_blank" rel="noopener"> <img src="../shared/img/iconos/facebook.svg" alt="Facebook" width="22" height="22"> </a> </p> </div>    <div><h2>Horarios</h2><p>Mar–dom · 14:00–16:00 / 21:00–00:00<br>Lunes cerrado</p></div>
+    <div><h2><a href="sobre-nosotros-y-legal.html">Sobre nosotros y legal</a></h2><p><a href="galeria.html">Galería</a></p></div>
+  </footer>
+  <script src="../shared/js/vendor/jquery-4.1.0.min.js"></script>
+  <script src="../shared/js/main.js"></script>
+  <script src="../shared/js/formularios.js"></script>
+</body>
+</html>

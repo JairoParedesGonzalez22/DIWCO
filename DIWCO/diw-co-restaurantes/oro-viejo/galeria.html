@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galería · Oro Viejo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/css/base.css">
+  <link rel="stylesheet" href="../shared/css/components.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body data-sitio="oro-viejo">
+  <header class="cabecera">
+    <a class="logo" href="index.html"><img src="img/logo.png" alt="Logotipo de Oro Viejo"></a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="la-carta.html">La carta</a></li>
+        <li><a href="pedido-online.html">Pedido online</a></li>
+        <li><a href="reservas.html">Reservas</a></li>
+        <li><a href="nuestros-restaurantes.html">Nuestros restaurantes</a></li>
+        <li><a href="contacto-y-ubicacion.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="contenido">
+    <div class="cabecera-pagina">
+      <h1>Galería</h1>
+      <div class="filtros" id="filtros-galeria" role="group" aria-label="Categorías">
+        <button type="button" class="boton boton-secundario activo" data-filtro="todo" aria-pressed="true">Todo</button>
+        <button type="button" class="boton boton-secundario" data-filtro="local" aria-pressed="false">El local</button>
+        <button type="button" class="boton boton-secundario" data-filtro="platos" aria-pressed="false">Platos</button>
+        <button type="button" class="boton boton-secundario" data-filtro="eventos" aria-pressed="false">Eventos</button>
+      </div>
+    </div>
+    <div class="galeria">
+        <button type="button" class="foto" data-categoria="local"><img src="img/local.png" alt="Salón principal"></button>
+        <button type="button" class="foto" data-categoria="eventos"><img src="img/cena.png" alt="Cena entre amigos"></button>
+        <button type="button" class="foto" data-categoria="local"><img src="img/servicio.png" alt="Camareros y cocina"></button>
+        <button type="button" class="foto" data-categoria="platos"><img src="img/arroz-con-leche.png" alt="Arroz con leche"></button>
+        <button type="button" class="foto" data-categoria="eventos"><img src="img/pareja.png" alt="Cena de pareja"></button>
+        <button type="button" class="foto" data-categoria="platos"><img src="img/cheesecake.jpg" alt="Tarta de la casa"></button>
+        <button type="button" class="foto" data-categoria="eventos"><img src="img/brindis.png" alt="Brindis"></button>
+        <button type="button" class="foto" data-categoria="local"><img src="img/cocina.png" alt="Cocina"></button>
+    </div>
+    <div class="visor" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
+      <button type="button" class="visor-cerrar" aria-label="Cerrar">×</button>
+      <button type="button" class="visor-anterior" aria-label="Imagen anterior">←</button>
+      <img class="visor-img" src="" alt="">
+      <button type="button" class="visor-siguiente" aria-label="Imagen siguiente">→</button>
+    </div>
+  </main>
+  <footer class="pie">
+    <div><h2>Dirección y contacto</h2><p>Calle San Bernardo 73, Gijón<br>+34 985 00 00 00</p></div>
+<div> <h2>Redes sociales</h2> <p class="redes"> <a href="https://instagram.com" target="_blank" rel="noopener"> <img src="../shared/img/iconos/instagram.svg" alt="Instagram" width="22" height="22"> </a> <a href="https://facebook.com" target="_blank" rel="noopener"> <img src="../shared/img/iconos/facebook.svg" alt="Facebook" width="22" height="22"> </a> </p> </div>    <div><h2>Horarios</h2><p>Mar–dom · 14:00–16:00 / 21:00–00:00<br>Lunes cerrado</p></div>
+    <div><h2><a href="sobre-nosotros-y-legal.html">Sobre nosotros y legal</a></h2><p><a href="galeria.html">Galería</a></p></div>
+  </footer>
+  <script src="../shared/js/vendor/jquery-4.1.0.min.js"></script>
+  <script src="../shared/js/main.js"></script>
+  <script src="../shared/js/galeria.js"></script>
+</body>
+</html>

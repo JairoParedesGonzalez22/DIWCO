@@ -1,0 +1,6 @@
+FOTOS DE LOS PLATOS (las pone cada miembro, nombre exacto):
+croquetas.jpg  cabracho.jpg  cachopo.jpg  merluza.jpg
+rabo.jpg  arroz.jpg  tarta.jpg  sidra.jpg
++ las de la galería (galeria.html) y las que quieras.
+Consejo: JPG, 800 px de ancho, menos de 150 KB cada una.
+logo.png e inicio.jpg ya están puestas.
