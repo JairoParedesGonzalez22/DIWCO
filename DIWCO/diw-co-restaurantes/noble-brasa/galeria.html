@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galería · Noble Brasa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/css/base.css">
+  <link rel="stylesheet" href="../shared/css/components.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body data-sitio="noble-brasa">
+
+  <header class="cabecera">
+    <a class="logo" href="index.html"><img src="img/logo.png" alt="Logotipo de Noble Brasa"></a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="la-carta.html">La carta</a></li>
+        <li><a href="pedido-online.html">Pedido online</a></li>
+        <li><a href="reservas.html">Reservas</a></li>
+        <li><a href="nuestros-restaurantes.html">Nuestros restaurantes</a></li>
+        <li><a href="contacto-y-ubicacion.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido">
+    <div class="cabecera-pagina">
+      <div>
+        <h1>Galería</h1>
+        <p class="subtitulo">Nuestro salón, el fuego de encina y los cortes que salen cada día de la parrilla.</p>
+      </div>
+      <div id="filtros-galeria" class="filtros">
+        <button type="button" class="boton boton-secundario activo" data-filtro="todo">Todas</button>
+        <button type="button" class="boton boton-secundario" data-filtro="local">El local y la brasa</button>
+        <button type="button" class="boton boton-secundario" data-filtro="platos">Nuestros platos</button>
+      </div>
+    </div>
+
+    <div class="galeria">
+      <button type="button" class="foto" data-categoria="local"><img src="img/local.jpg" alt="Salón y parrilla abierta de Noble Brasa"></button>
+      <button type="button" class="foto" data-categoria="local"><img src="img/inicio.jpg" alt="Brasa de carbón de encina"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/entrecot.jpg" alt="Entrecot de vaca madurada"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/entrana.jpg" alt="Entraña de ternera a la brasa"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/costillar.jpg" alt="Costillar ibérico glaseado"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/criollomorcilla.jpg" alt="Chorizo criollo y morcilla"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/provolone.jpg" alt="Provolone fundido a la parrilla"></button>
+      <button type="button" class="foto" data-categoria="platos"><img src="img/coulant.jpg" alt="Coulant de chocolate negro"></button>
+    </div>
+  </main>
+
+  <div class="visor" hidden>
+    <button type="button" class="visor-cerrar" aria-label="Cerrar">&times;</button>
+    <button type="button" class="visor-anterior" aria-label="Anterior">&lsaquo;</button>
+    <img class="visor-img" src="" alt="">
+    <button type="button" class="visor-siguiente" aria-label="Siguiente">&rsaquo;</button>
+  </div>
+
+  <footer class="pie">
+    <div>
+      <h2>Dirección y contacto</h2>
+      <p>Marqués de San Esteban 42, Gijón<br>+34 985 33 11 22</p>
+    </div>
+    <div>
+      <h2>Redes sociales</h2>
+      <p class="redes"><a href="#">Instagram</a> <a href="#">Facebook</a></p>
+    </div>
+    <div>
+      <h2>Horarios</h2>
+      <p>Lun–Dom: 13:00–16:00 / 20:00–23:00<br>Abierto todos los días</p>
+    </div>
+    <div>
+      <h2><a href="sobre-nosotros-y-legal.html">Sobre nosotros y legal</a></h2>
+      <p><a href="galeria.html">Galería</a></p>
+    </div>
+  </footer>
+
+  <script src="../shared/js/vendor/jquery-4.1.0.min.js"></script>
+  <script src="../shared/js/main.js"></script>
+  <script src="../shared/js/galeria.js"></script>
+</body>
+</html>
