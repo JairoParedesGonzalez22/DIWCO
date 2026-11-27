@@ -1,0 +1,98 @@
+/* =====================================================================
+   base.css  ·  ESTILOS COMUNES A LOS 5 SITIOS
+   ---------------------------------------------------------------------
+   Aquí está lo que se parece en todos los restaurantes: variables de la
+   guía de estilo, tipografías, cabecera, pie, botones y formularios.
+   Lo único que cambia entre restaurantes es --acento (en css/theme.css).
+   Orden de carga en cada página: base.css → components.css → theme.css
+   ===================================================================== */
+
+/* 1. VARIABLES (guía de estilo) ------------------------------------- */
+:root {
+  --acento: #8A6A2F;        /* Color del restaurante: lo sobrescribe theme.css */
+  --acento-texto: #FFFFFF;  /* Texto que va encima del color de acento */
+  --fondo: #F8F5EF;         /* Blanco roto */
+  --tinta: #1E1E1E;         /* Carbón (texto principal) */
+  --blanco: #FFFFFF;
+  --dorado: #C9A862;        /* Detalle dorado común */
+  --linea: #DDD3BC;         /* Líneas finas y bordes suaves */
+  --gris: #555555;          /* Texto secundario */
+  --fuente-titulo: 'Playfair Display', Georgia, serif;
+  --fuente-texto: 'Montserrat', Arial, sans-serif;
+  --ancho-max: 1240px;      /* Ancho máximo del contenido */
+  --margen: 48px;           /* Margen lateral de las páginas */
+}
+
+/* 2. REINICIO Y TIPOGRAFÍA BASE ------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }   /* el ancho incluye padding y borde */
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  color: var(--tinta);
+  background: var(--fondo);
+  line-height: 1.5;
+}
+h1, h2, h3 { font-family: var(--fuente-titulo); font-weight: 500; margin: 0; line-height: 1.15; }
+h1 { font-size: 2.6rem; }
+h2 { font-size: 1.35rem; }
+p, ul { margin: 0 0 .8rem; }
+ul { padding: 0; list-style: none; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--dorado); outline-offset: 2px; }  /* foco visible con teclado */
+
+/* 3. UTILIDADES ------------------------------------------------------ */
+[hidden] { display: none !important; }       /* el atributo hidden SIEMPRE oculta */
+.contenido { max-width: var(--ancho-max); margin: 0 auto; padding: var(--margen); }  /* zona central de cada página */
+.cabecera-pagina {                           /* título + filtros en una fila */
+  display: flex; justify-content: space-between; align-items: flex-end;
+  flex-wrap: wrap; gap: 24px; margin-bottom: 32px;
+}
+.subtitulo { margin: .6rem 0 0; color: var(--gris); }
+.nota { font-size: .8rem; color: var(--gris); }
+
+/* 4. CABECERA COMÚN (todas las páginas menos Inicio) ----------------- */
+.cabecera {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px var(--margen); background: var(--blanco); border-bottom: 1px solid var(--linea);
+}
+.logo img { width: 56px; height: 56px; }
+.cabecera ul { display: flex; gap: 28px; margin: 0; }
+.cabecera a { text-decoration: none; font-size: .9rem; padding: 6px 0; }
+.cabecera a[aria-current="page"] {           /* main.js marca la página actual */
+  font-weight: 600; color: var(--acento); border-bottom: 2px solid var(--acento);
+}
+
+/* 5. PIE COMÚN -------------------------------------------------------- */
+.pie {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+  padding: 40px var(--margen); background: var(--acento); color: var(--acento-texto); font-size: .88rem;
+}
+.pie h2 { font-size: 1.1rem; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--dorado); }
+.pie a { text-decoration: underline; }
+.redes { display: flex; gap: 12px; }
+
+/* 6. BOTONES ----------------------------------------------------------- */
+/* .boton = principal (relleno).  .boton-secundario = solo borde.        */
+.boton {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 10px 22px; border: 2px solid var(--acento); border-radius: 0;
+  background: var(--acento); color: var(--acento-texto);
+  font: 600 .9rem var(--fuente-texto); text-decoration: none; cursor: pointer;
+}
+.boton:hover { filter: brightness(1.12); }
+.boton-secundario { background: transparent; color: var(--acento); }
+.boton.activo { background: var(--acento); color: var(--acento-texto); }  /* botón seleccionado (filtros, modalidad) */
+.boton-ancho { width: 100%; margin-top: 18px; }
+
+/* 7. FORMULARIOS ------------------------------------------------------- */
+.campo { display: flex; flex-direction: column; gap: 4px; margin-top: 14px; font-size: .85rem; font-weight: 600; }
+.campo input, .campo select, .campo textarea {
+  min-height: 44px; padding: 10px 12px; border: 1px solid #8A8A8A; background: var(--blanco);
+  color: var(--tinta); font: 400 .95rem var(--fuente-texto);
+}
+.campo textarea { min-height: 130px; resize: vertical; }
+.casilla { display: flex; gap: 10px; align-items: flex-start; margin-top: 18px; font-size: .88rem; }
+.casilla input { flex: none; width: 20px; height: 20px; margin-top: 2px; accent-color: var(--acento); }
+.aviso { margin-top: 14px; padding: 12px 14px; font-size: .9rem; border-left: 4px solid var(--acento); background: #EFE6CF; }
+.aviso-error { border-left-color: #8A2F2F; background: #F6E3E3; }

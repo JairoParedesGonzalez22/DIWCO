@@ -1,0 +1,98 @@
+/* =====================================================================
+   components.css  ·  COMPONENTES REUTILIZABLES, POR PÁGINA
+   ---------------------------------------------------------------------
+   Cada bloque corresponde a una página o a un elemento concreto.
+   Usan las variables de base.css, así que cambian solos de color
+   según el restaurante.
+   ===================================================================== */
+
+/* 1. FILTROS DE CATEGORÍA (carta, pedido y galería) -------------------- */
+.filtros { display: flex; gap: 12px; flex-wrap: wrap; }
+.pedido .filtros { margin-bottom: 20px; }   /* separa los filtros de la lista de platos */
+
+/* 2. LA CARTA: rejilla de tarjetas ------------------------------------- */
+.rejilla-platos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.tarjeta { display: flex; flex-direction: column; background: var(--blanco); border: 1px solid var(--linea); }
+.tarjeta img { width: 100%; height: 200px; object-fit: cover; background: var(--linea); }
+.tarjeta-cuerpo { display: flex; flex-direction: column; gap: 8px; padding: 16px; flex: 1; }
+.tarjeta-cuerpo p { margin: 0; font-size: .85rem; color: var(--gris); }
+.tarjeta-pie { display: flex; justify-content: space-between; align-items: center; padding: 0 16px 16px; }
+
+/* 3. PEDIDO ONLINE ------------------------------------------------------ */
+.pedido { display: grid; grid-template-columns: 1fr 400px; gap: 40px; align-items: start; }
+.fila-plato { display: grid; grid-template-columns: 96px 1fr auto auto; gap: 16px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--linea); }
+.fila-plato img { width: 96px; height: 72px; object-fit: cover; }
+.fila-plato h3 { font-size: 1.1rem; }
+.fila-plato p { margin: 2px 0 0; font-size: .8rem; color: var(--gris); }
+.contador { display: flex; align-items: center; gap: 10px; }   /* botones − y + */
+.contador button { width: 44px; min-height: 44px; border: 2px solid var(--acento); background: transparent; color: var(--acento); font: 600 1.1rem var(--fuente-texto); cursor: pointer; }
+.contador output { min-width: 24px; text-align: center; font-weight: 600; }
+.resumen { position: sticky; top: 16px; padding: 24px; background: var(--blanco); border: 1px solid var(--linea); }
+.resumen ul { margin: 12px 0; font-size: .9rem; }
+.resumen li, .linea-total { display: flex; justify-content: space-between; gap: 12px; padding: 4px 0; font-size: .9rem; }
+.linea-total.final { margin-top: 8px; padding-top: 12px; border-top: 1px solid var(--linea); font: 500 1.35rem var(--fuente-titulo); }
+
+/* 4. RESERVAS Y CONTACTO (formulario + columna lateral) ----------------- */
+.dos-columnas { display: grid; grid-template-columns: 1fr 380px; gap: 40px; align-items: start; }
+.dos-columnas.iguales { grid-template-columns: 1fr 1fr; }
+.dos-campos { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+.zona { display: flex; }                                       /* opciones Interior / Exterior */
+.zona label { position: relative; flex: 1; }
+.zona input { position: absolute; inset: 0; opacity: 0; }     /* el radio real queda invisible */
+.zona span { display: flex; align-items: center; justify-content: center; min-height: 44px; border: 2px solid var(--acento); color: var(--acento); font-weight: 600; font-size: .9rem; cursor: pointer; }
+.zona input:checked + span { background: var(--acento); color: var(--acento-texto); }
+.zona input:focus-visible + span { outline: 3px solid var(--dorado); outline-offset: 2px; }
+
+/* 5. NUESTROS RESTAURANTES ---------------------------------------------- */
+.restaurantes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; margin-top: 40px; text-align: center; }
+.restaurantes a { display: flex; flex-direction: column; align-items: center; gap: 12px; text-decoration: none; }
+.restaurantes img { width: 130px; height: 130px; object-fit: contain; }
+.restaurantes p { margin: 8px 0; font-size: .8rem; color: var(--gris); }
+
+/* 6. CONTACTO ------------------------------------------------------------ */
+.info-contacto li { display: flex; gap: 12px; margin-bottom: 16px; font-size: .92rem; }
+.info-contacto img { width: 22px; height: 22px; flex: none; }
+.mapa iframe { display: block; width: 100%; height: 240px; border: 1px solid var(--linea); }
+
+/* 7. GALERÍA Y VISOR (imagen ampliada) ------------------------------------ */
+.galeria { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.foto { padding: 0; border: 0; background: var(--linea); cursor: zoom-in; }
+.foto img { width: 100%; height: 200px; object-fit: cover; }
+.visor { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; gap: 16px; background: rgba(30, 30, 30, .9); }
+.visor-img { max-width: 70vw; max-height: 75vh; object-fit: contain; }
+.visor button { width: 48px; height: 48px; border: 2px solid #fff; background: transparent; color: #fff; font-size: 1.4rem; cursor: pointer; }
+.visor-cerrar { position: absolute; top: 24px; right: 24px; }
+
+/* 8. SOBRE NOSOTROS Y LEGAL ------------------------------------------------- */
+.documento { display: grid; grid-template-columns: 220px 1fr; gap: 48px; margin-top: 32px; }
+.indice { position: sticky; top: 16px; align-self: start; }
+.indice li { padding: 10px 0; border-bottom: 1px solid var(--linea); font-size: .9rem; }
+.indice a { text-decoration: none; }
+.documento section { padding-bottom: 28px; margin-bottom: 28px; border-bottom: 1px solid var(--linea); scroll-margin-top: 16px; }
+.documento h2 { margin-bottom: 14px; }
+.panel-cookies { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; margin-top: 14px; font-size: .9rem; }
+
+/* 9. INICIO (3 bloques a pantalla completa) ---------------------------------- */
+.inicio { display: grid; grid-template-columns: 36fr 33fr 31fr; min-height: 100vh; padding-bottom: 96px; }   /* hueco para el aviso de cookies */
+.inicio-imagen { background: var(--imagen-inicio, none) center/cover no-repeat, var(--acento); }          /* la foto se define en theme.css */
+.inicio-panel { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 32px 48px; text-align: center; background: var(--acento); color: var(--acento-texto); }
+.inicio-panel .logo img { width: 110px; height: 110px; }
+.inicio-panel h1 { font-size: 3rem; }
+.inicio-panel .boton { background: var(--fondo); border-color: var(--fondo); color: var(--acento); }          /* en el panel de color los botones se invierten */
+.inicio-panel .boton-secundario { background: transparent; border-color: #fff; color: #fff; }
+.etiqueta { font-size: .72rem; letter-spacing: .2em; font-weight: 600; text-transform: uppercase; }
+.botones-inicio { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 280px; margin-top: 8px; }
+.menu-lateral { position: relative; display: flex; flex-direction: column; padding: 96px 56px 32px; background: var(--fondo); }
+.menu-lateral a { display: block; padding: 14px 0; border-bottom: 1px solid var(--linea); font-size: 1.15rem; text-decoration: none; }
+.menu-lateral a[aria-current="page"] { font-weight: 600; }
+.menu-cerrar, .menu-abrir { border: 1px solid var(--tinta); background: var(--fondo); color: var(--tinta); font: 600 .9rem var(--fuente-texto); cursor: pointer; }
+.menu-cerrar { position: absolute; top: 24px; right: 24px; width: 44px; height: 44px; border-radius: 50%; font-size: 1.4rem; }
+.menu-abrir { position: fixed; top: 24px; right: 24px; z-index: 5; min-height: 44px; padding: 0 20px; }
+.inicio.sin-menu { grid-template-columns: 1fr 1fr; }                                                       /* main.js añade esta clase al cerrar el menú */
+.inicio.sin-menu .menu-lateral { display: none; }
+
+/* 10. AVISO DE COOKIES --------------------------------------------------------- */
+.aviso-cookies { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 12px 32px; background: var(--fondo); border-top: 1px solid var(--linea); font-size: .8rem; }
+.aviso-cookies p { margin: 0; }
+.aviso-cookies div { display: flex; align-items: center; gap: 10px; }
+.aviso-cookies .boton { min-height: 40px; padding: 6px 16px; font-size: .8rem; }
