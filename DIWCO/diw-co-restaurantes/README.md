@@ -82,8 +82,8 @@ Más detalle en [`shared/README.md`](shared/README.md).
 | Oro Viejo | Jairo | Completado |
 | Noble Brasa | Jose Miguel | Completado |
 | Marea Alta | Joel | Completado |
-| Oliva Real | Alex | Pendiente |
-| Sumi | German | Pendiente |
+| Oliva Real | Alex | Completado |
+| Sumi | German | Completado |
 
 ## Documentación
 
