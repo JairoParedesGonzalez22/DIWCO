@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reservas · SUMI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../shared/css/base.css" />
+    <link rel="stylesheet" href="../shared/css/components.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+  </head>
+  <body data-sitio="sumi">
+    <header class="cabecera">
+      <a class="logo" href="index.html"
+        ><img src="img/logo.png" alt="Logotipo de SUMI"
+      /></a>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="la-carta.html">La carta</a></li>
+          <li><a href="pedido-online.html">Pedido online</a></li>
+          <li><a href="reservas.html">Reservas</a></li>
+          <li>
+            <a href="nuestros-restaurantes.html">Nuestros restaurantes</a>
+          </li>
+          <li><a href="contacto-y-ubicacion.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="contenido">
+      <div class="cabecera-pagina">
+        <div>
+          <h1>Reservas</h1>
+          <p class="subtitulo">
+            Reserva tu mesa en SUMI. Te confirmaremos por teléfono.
+          </p>
+        </div>
+      </div>
+
+      <div class="dos-columnas">
+        <form id="form-reserva" class="formulario-demo">
+          <div class="dos-campos">
+            <label class="campo"
+              >Fecha
+              <input type="date" name="fecha" required />
+            </label>
+            <label class="campo"
+              >Hora
+              <select name="hora" required>
+                <option value="">Elige una hora</option>
+                <option>13:00</option>
+                <option>13:30</option>
+                <option>14:00</option>
+                <option>14:30</option>
+                <option>15:00</option>
+                <option>20:30</option>
+                <option>21:00</option>
+                <option>21:30</option>
+                <option>22:00</option>
+                <option>22:30</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="campo">
+            <span id="etq-comensales">Comensales</span>
+            <div class="contador" role="group" aria-labelledby="etq-comensales">
+              <button
+                type="button"
+                data-paso="-1"
+                aria-label="Un comensal menos"
+              >
+                −
+              </button>
+              <output id="comensales">2</output>
+              <button type="button" data-paso="1" aria-label="Un comensal más">
+                +
+              </button>
+            </div>
+          </div>
+
+          <div class="campo">
+            <span id="etq-zona">Zona</span>
+            <div class="zona" role="radiogroup" aria-labelledby="etq-zona">
+              <label
+                ><input
+                  type="radio"
+                  name="zona"
+                  value="Interior"
+                  checked
+                /><span>Interior</span></label
+              >
+              <label
+                ><input type="radio" name="zona" value="Exterior" /><span
+                  >Exterior</span
+                ></label
+              >
+            </div>
+          </div>
+
+          <div class="dos-campos">
+            <label class="campo"
+              >Nombre
+              <input type="text" name="nombre" autocomplete="name" required />
+            </label>
+            <label class="campo"
+              >Teléfono
+              <input type="tel" name="telefono" autocomplete="tel" required />
+            </label>
+          </div>
+
+          <label class="casilla">
+            <input type="checkbox" name="privacidad" required />
+            <span
+              >Acepto la
+              <a href="sobre-nosotros-y-legal.html#privacidad"
+                >política de privacidad</a
+              >.</span
+            >
+          </label>
+
+          <button type="submit" class="boton boton-ancho">Reservar mesa</button>
+          <p class="aviso" role="status" hidden>
+            Reserva recibida (prototipo). ¡Gracias!
+          </p>
+        </form>
+
+        <aside class="resumen" aria-label="Resumen de la reserva">
+          <h2>Resumen de tu reserva</h2>
+          <ul>
+            <li>
+              <span>Fecha</span><span id="res-fecha">Por seleccionar</span>
+            </li>
+            <li><span>Hora</span><span id="res-hora">Por seleccionar</span></li>
+            <li>
+              <span>Comensales</span><span id="res-comensales">2 personas</span>
+            </li>
+            <li><span>Zona</span><span id="res-zona">Interior</span></li>
+          </ul>
+          <p class="aviso" id="res-pendiente">Faltan datos por completar.</p>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="pie">
+      <div>
+        <h2>Dirección y contacto</h2>
+        <p>
+          <img src="img/iconos/ubicacion.svg" alt="" />Calle Gascona, 12 · 33001
+          Oviedo<br />
+          <img src="img/iconos/telefono.svg" alt="" />985 00 00 00<br />
+          <img src="img/iconos/email.svg" alt="" />hola@sumirestaurantes.es
+        </p>
+      </div>
+      <div>
+        <h2>Redes sociales</h2>
+        <p class="redes">
+          <a href="#" aria-label="Instagram de SUMI"
+            ><img src="img/iconos/instagram.svg" alt=""
+          /></a>
+          <a href="#" aria-label="Facebook de SUMI"
+            ><img src="img/iconos/facebook.svg" alt=""
+          /></a>
+        </p>
+      </div>
+      <div>
+        <h2>Horarios</h2>
+        <p>
+          <img src="img/iconos/horario.svg" alt="" />Mar–Dom: 13:00–16:00 y
+          20:00–23:30<br />Cerrado los lunes
+        </p>
+      </div>
+      <div>
+        <h2>
+          <a href="sobre-nosotros-y-legal.html">Sobre nosotros y legal</a>
+        </h2>
+        <p>
+          <a href="galeria.html">Galería</a><br /><a
+            href="sobre-nosotros-y-legal.html#privacidad"
+            >Política de privacidad</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script src="../shared/js/vendor/jquery-4.1.0.min.js"></script>
+    <script src="../shared/js/main.js"></script>
+    <script src="../shared/js/formularios.js"></script>
+  </body>
+</html>
