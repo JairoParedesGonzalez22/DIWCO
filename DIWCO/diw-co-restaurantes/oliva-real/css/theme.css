@@ -1,0 +1,15 @@
+:root {
+  --acento: #0B4F3F;
+  --acento-texto: #FFFFFF;
+  --imagen-inicio: url('../img/fondo.mp4');
+}
+
+.logo-icon {
+    border-radius: 50%;
+}
+
+.logo img, .restaurante img {
+  border-radius: 50%;
+  object-fit: cover;
+
+}
