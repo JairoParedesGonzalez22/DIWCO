@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+  PLANTILLA DE PÁGINA INTERIOR
+  Copia este archivo dentro de la carpeta de tu restaurante (por ejemplo oro-viejo/)
+  y cámbiale el nombre. Sustituye todo lo que pone TU_RESTAURANTE / TU-SITIO.
+  Las rutas "../shared/..." funcionan porque la carpeta shared está un nivel por encima.
+-->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TÍTULO DE LA PÁGINA · TU_RESTAURANTE</title>
+
+  <!-- Tipografías de la guía de estilo (Playfair Display y Montserrat) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos: ORDEN IMPORTANTE (base → componentes → tema del restaurante) -->
+  <link rel="stylesheet" href="../shared/css/base.css">
+  <link rel="stylesheet" href="../shared/css/components.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+
+<!-- data-sitio identifica al restaurante (lo usan los scripts para guardar su pedido) -->
+<body data-sitio="TU-SITIO">
+
+  <!-- CABECERA COMÚN: igual en todas las páginas; solo cambia el logo -->
+  <header class="cabecera">
+    <a class="logo" href="index.html"><img src="img/logo.png" alt="Logotipo de TU_RESTAURANTE"></a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="la-carta.html">La carta</a></li>
+        <li><a href="pedido-online.html">Pedido online</a></li>
+        <li><a href="reservas.html">Reservas</a></li>
+        <li><a href="nuestros-restaurantes.html">Nuestros restaurantes</a></li>
+        <li><a href="contacto-y-ubicacion.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO: lo único que cambia en cada página -->
+  <main class="contenido">
+    <h1>Título de la página</h1>
+  </main>
+
+  <!-- PIE COMÚN -->
+  <footer class="pie">
+    <div>
+      <h2>Dirección y contacto</h2>
+      <p>Dirección del restaurante<br>Teléfono</p>
+    </div>
+    <div>
+      <h2>Redes sociales</h2>
+      <p class="redes"><a href="#">Instagram</a> <a href="#">Facebook</a></p>
+    </div>
+    <div>
+      <h2>Horarios</h2>
+      <p>Horario del restaurante<br>Día de cierre</p>
+    </div>
+    <div>
+      <h2><a href="sobre-nosotros-y-legal.html">Sobre nosotros y legal</a></h2>
+      <p><a href="galeria.html">Galería</a></p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS: jQuery primero, después main.js, después los de la página -->
+  <script src="../shared/js/vendor/jquery-4.1.0.min.js"></script>
+  <script src="../shared/js/main.js"></script>
+  <!-- Añade aquí los de tu página, por ejemplo:
+       <script src="js/carta-data.js"></script>
+       <script src="../shared/js/carta.js"></script> -->
+</body>
+</html>
