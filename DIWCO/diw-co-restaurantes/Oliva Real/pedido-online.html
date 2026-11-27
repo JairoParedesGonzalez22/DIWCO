@@ -1,0 +1,178 @@
+<!doctype html>
+<!-- ============================================================
+   PEDIDO ONLINE - Oliva Real (DIW&CO)
+   Página de carrito de compra con selector cantidades, modalidad (recoger/domicilio),
+   resumen dinámico (subtotal/envío/total) y formulario envío.
+   Estructura: header + main.contenedor > .page-header + .grid-2-columnas
+   Columna izq: lista .fila-pedido[data-id][data-nombre][data-precio] con .selector-cantidad
+   Columna der: form.caja-blanca.resumen-pedido > .resumen-lista + .resumen-linea + .campos-domicilio + select hora + submit
+   JS: main.js gestiona +/- cantidades, toggle modalidad (envío 0/3.50), recálculo tiempo real, envío form
+   ============================================================ -->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido online | Oliva Real</title>
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <link rel="stylesheet" href="css/tema.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/cookies.js"></script>
+    <script src="js/pedido.js"></script>
+    <script src="js/formularios.js"></script>
+    <script src="js/transiciones.js"></script>
+  </head>
+  <body>
+    <header class="cabecera">
+      <a href="index.html" class="cabecera-logo"><img src="img/logo.png" alt="Logo Oliva Real"></a>
+      <nav class="menu-principal">
+        <a href="index.html">Inicio</a>
+        <a href="la-carta.html">La carta</a>
+        <a href="pedido-online.html" class="activo">Pedido online</a>
+        <a href="reservas.html">Reservas</a>
+        <a href="nuestros-restaurantes.html">Nuestros restaurantes</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </header>
+
+    <main class="contenedor">
+      <div class="page-header">
+        <div class="page-header__left">
+          <h1 class="titulo-pagina">Pedido online</h1>
+          <p class="subtitulo-pagina">Disfruta de la gastronomía mediterránea de Oliva Real donde quieras.</p>
+        </div>
+        <div class="page-header__right">
+          <button type="button" class="btn-secundario btn-modalidad" data-modo="recoger">Recoger en tienda</button>
+          <button type="button" class="btn-primario btn-modalidad" data-modo="domicilio">Entrega a domicilio</button>
+        </div>
+      </div>
+
+      <div class="grid-2-columnas">
+        <div>
+          <div class="fila-pedido" data-id="patatas-bravas" data-nombre="Patatas bravas" data-precio="7.50">
+            <div class="fila-pedido__info"><strong>Patatas bravas</strong><p class="fila-pedido__precio">7,50 € / ración</p></div>
+            <div class="selector-cantidad"><button type="button" class="btn-cant btn-menos">−</button><span class="valor-cant">0</span><button type="button" class="btn-cant btn-mas">+</button></div>
+          </div>
+
+          <div class="fila-pedido" data-id="croquetas" data-nombre="Croquetas de jamón ibérico" data-precio="10.00">
+            <div class="fila-pedido__info"><strong>Croquetas de jamón ibérico</strong><p class="fila-pedido__precio">10,00 € / ración</p></div>
+            <div class="selector-cantidad"><button type="button" class="btn-cant btn-menos">−</button><span class="valor-cant">0</span><button type="button" class="btn-cant btn-mas">+</button></div>
+          </div>
+
+          <div class="fila-pedido" data-id="pan-tomate" data-nombre="Pan con tomate" data-precio="5.50">
+            <div class="fila-pedido__info"><strong>Pan con tomate</strong><p class="fila-pedido__precio">5,50 € / ración</p></div>
+            <div class="selector-cantidad"><button type="button" class="btn-cant btn-menos">−</button><span class="valor-cant">0</span><button type="button" class="btn-cant btn-mas">+</button></div>
+          </div>
+
+          <div class="fila-pedido" data-id="escalivada" data-nombre="Escalivada mediterránea" data-precio="9.50">
+            <div class="fila-pedido__info"><strong>Escalivada mediterránea</strong><p class="fila-pedido__precio">9,50 € / ración</p></div>
+            <div class="selector-cantidad"><button type="button" class="btn-cant btn-menos">−</button><span class="valor-cant">0</span><button type="button" class="btn-cant btn-mas">+</button></div>
+          </div>
+
+          <div class="fila-pedido" data-id="gambas-ajillo" data-nombre="Gambas al ajillo" data-precio="13.50">
+            <div class="fila-pedido__info"><strong>Gambas al ajillo</strong><p class="fila-pedido__precio">13,50 € / ración</p></div>
+            <div class="selector-cantidad"><button type="button" class="btn-cant btn-menos">−</button><span class="valor-cant">0</span><button type="button" class="btn-cant btn-mas">+</button></div>
+          </div>
+
+          <div class="fila-pedido" data-id="ensalada" data-nombre="Ensalada mediterránea" data-precio="11.00">
+            <div class="fila-pedido__info"><strong>Ensalada mediterránea</strong><p class="fila-pedido__precio">11,00 € / ración</p></div>
+            <div class="selector-cantidad"><button type="button" class="btn-cant btn-menos">−</button><span class="valor-cant">0</span><button type="button" class="btn-cant btn-mas">+</button></div>
+          </div>
+
+          <div class="fila-pedido" data-id="paella" data-nombre="Paella valenciana" data-precio="16.50">
+            <div class="fila-pedido__info"><strong>Paella valenciana</strong><p class="fila-pedido__precio">16,50 € / persona</p></div>
+            <div class="selector-cantidad"><button type="button" class="btn-cant btn-menos">−</button><span class="valor-cant">0</span><button type="button" class="btn-cant btn-mas">+</button></div>
+          </div>
+
+          <div class="fila-pedido" data-id="fideua" data-nombre="Fideuá mediterránea" data-precio="17.50">
+            <div class="fila-pedido__info"><strong>Fideuá mediterránea</strong><p class="fila-pedido__precio">17,50 € / persona</p></div>
+            <div class="selector-cantidad"><button type="button" class="btn-cant btn-menos">−</button><span class="valor-cant">0</span><button type="button" class="btn-cant btn-mas">+</button></div>
+          </div>
+
+          <div class="fila-pedido" data-id="arroz-negro" data-nombre="Arroz negro" data-precio="18.00">
+            <div class="fila-pedido__info"><strong>Arroz negro</strong><p class="fila-pedido__precio">18,00 € / persona</p></div>
+            <div class="selector-cantidad"><button type="button" class="btn-cant btn-menos">−</button><span class="valor-cant">0</span><button type="button" class="btn-cant btn-mas">+</button></div>
+          </div>
+
+          <div class="fila-pedido" data-id="arroz-senyoret" data-nombre="Arroz del senyoret" data-precio="19.00">
+            <div class="fila-pedido__info"><strong>Arroz del senyoret</strong><p class="fila-pedido__precio">19,00 € / persona</p></div>
+            <div class="selector-cantidad"><button type="button" class="btn-cant btn-menos">−</button><span class="valor-cant">0</span><button type="button" class="btn-cant btn-mas">+</button></div>
+          </div>
+
+          <div class="fila-pedido" data-id="arroz-setas" data-nombre="Arroz meloso de setas y pollo" data-precio="16.00">
+            <div class="fila-pedido__info"><strong>Arroz meloso de setas y pollo</strong><p class="fila-pedido__precio">16,00 € / persona</p></div>
+            <div class="selector-cantidad"><button type="button" class="btn-cant btn-menos">−</button><span class="valor-cant">0</span><button type="button" class="btn-cant btn-mas">+</button></div>
+          </div>
+
+          <div class="fila-pedido" data-id="pollo" data-nombre="Pollo a la parrilla" data-precio="14.50">
+            <div class="fila-pedido__info"><strong>Pollo a la parrilla</strong><p class="fila-pedido__precio">14,50 € / ración</p></div>
+            <div class="selector-cantidad"><button type="button" class="btn-cant btn-menos">−</button><span class="valor-cant">0</span><button type="button" class="btn-cant btn-mas">+</button></div>
+          </div>
+
+          <div class="fila-pedido" data-id="secreto" data-nombre="Secreto ibérico" data-precio="19.50">
+            <div class="fila-pedido__info"><strong>Secreto ibérico</strong><p class="fila-pedido__precio">19,50 € / ración</p></div>
+            <div class="selector-cantidad"><button type="button" class="btn-cant btn-menos">−</button><span class="valor-cant">0</span><button type="button" class="btn-cant btn-mas">+</button></div>
+          </div>
+
+          <div class="fila-pedido" data-id="bacalao" data-nombre="Bacalao al horno" data-precio="18.50">
+            <div class="fila-pedido__info"><strong>Bacalao al horno</strong><p class="fila-pedido__precio">18,50 € / ración</p></div>
+            <div class="selector-cantidad"><button type="button" class="btn-cant btn-menos">−</button><span class="valor-cant">0</span><button type="button" class="btn-cant btn-mas">+</button></div>
+          </div>
+
+          <div class="fila-pedido" data-id="albondigas" data-nombre="Albóndigas caseras" data-precio="13.50">
+            <div class="fila-pedido__info"><strong>Albóndigas caseras</strong><p class="fila-pedido__precio">13,50 € / ración</p></div>
+            <div class="selector-cantidad"><button type="button" class="btn-cant btn-menos">−</button><span class="valor-cant">0</span><button type="button" class="btn-cant btn-mas">+</button></div>
+          </div>
+
+          <div class="fila-pedido" data-id="crema-catalana" data-nombre="Crema catalana" data-precio="6.00">
+            <div class="fila-pedido__info"><strong>Crema catalana</strong><p class="fila-pedido__precio">6,00 € / unidad</p></div>
+            <div class="selector-cantidad"><button type="button" class="btn-cant btn-menos">−</button><span class="valor-cant">0</span><button type="button" class="btn-cant btn-mas">+</button></div>
+          </div>
+
+          <div class="fila-pedido" data-id="tarta-queso" data-nombre="Tarta de queso" data-precio="6.50">
+            <div class="fila-pedido__info"><strong>Tarta de queso</strong><p class="fila-pedido__precio">6,50 € / unidad</p></div>
+            <div class="selector-cantidad"><button type="button" class="btn-cant btn-menos">−</button><span class="valor-cant">0</span><button type="button" class="btn-cant btn-mas">+</button></div>
+          </div>
+
+          <div class="fila-pedido" data-id="torrija" data-nombre="Torrija caramelizada" data-precio="6.50">
+            <div class="fila-pedido__info"><strong>Torrija caramelizada</strong><p class="fila-pedido__precio">6,50 € / unidad</p></div>
+            <div class="selector-cantidad"><button type="button" class="btn-cant btn-menos">−</button><span class="valor-cant">0</span><button type="button" class="btn-cant btn-mas">+</button></div>
+          </div>
+
+          <div class="fila-pedido" data-id="coulant" data-nombre="Coulant de chocolate" data-precio="7.00">
+            <div class="fila-pedido__info"><strong>Coulant de chocolate</strong><p class="fila-pedido__precio">7,00 € / unidad</p></div>
+            <div class="selector-cantidad"><button type="button" class="btn-cant btn-menos">−</button><span class="valor-cant">0</span><button type="button" class="btn-cant btn-mas">+</button></div>
+          </div>
+        </div>
+
+        <form class="caja-blanca resumen-pedido" action="#" method="POST">
+          <h2>Tu pedido</h2>
+
+          <div id="lista-resumen-pedido" class="resumen-lista"></div>
+
+          <p class="resumen-linea"><span>Subtotal</span><span id="subtotal-pedido">0,00 €</span></p>
+          <p class="resumen-linea"><span>Envío</span><span id="envio-pedido">0,00 €</span></p>
+          <p class="resumen-linea resumen-linea--total"><span>Total</span><span id="total-pedido">0,00 €</span></p>
+
+          <div id="campos-domicilio" class="campos-domicilio hidden">
+            <div class="campo-grupo"><label>Dirección de entrega *<input type="text" name="dir_entrega" required placeholder="Calle, número, piso y código postal"></label></div>
+            <div class="campo-grupo"><label>Teléfono *<input type="tel" name="tel_entrega" required placeholder="Ej.: +34 600 000 000"></label></div>
+          </div>
+
+          <div class="campo-grupo"><label>Seleccionar hora *<select name="hora_entrega" required><option value="14:00">Hoy, 14:00</option><option value="14:30">Hoy, 14:30</option><option value="21:00">Hoy, 21:00</option><option value="21:30">Hoy, 21:30</option></select></label></div>
+
+          <button type="submit" class="btn-primario btn-submit-full">Confirmar pedido</button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="pie-pagina">
+      <div class="pie-grid">
+        <div><h4>Dirección y contacto</h4><p>Dirección pendiente de confirmar</p><p>Teléfono pendiente de confirmar</p></div>
+        <div><h4>Redes sociales</h4><p><a href="https://www.instagram.com/olivarealdiwco/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://facebook.com" target="_blank">Facebook</a></p></div>
+        <div><h4>Horarios</h4><p>Horario pendiente de confirmar</p></div>
+        <div><h4><a href="sobre-nosotros.html">Sobre nosotros y legal</a></h4><p><a href="galeria.html">Galería</a></p></div>
+      </div>
+    </footer>
+  </body>
+</html>

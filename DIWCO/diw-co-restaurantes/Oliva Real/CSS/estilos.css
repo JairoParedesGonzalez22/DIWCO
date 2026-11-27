@@ -1,0 +1,478 @@
+@import url("tema.css");
+
+/* ============================================================
+   VARIABLES CSS (COLOR PALETTE) - OLIVA REAL
+   ============================================================ */
+:root {
+  --color-fondo: #f8f5ef;
+  --color-texto: #1e1e1e;
+  --color-acento: #0b4f3f;
+  --color-acento-claro: #c9a862;
+  --color-blanco: #ffffff;
+  --color-borde: #d5d5d5;
+  --color-borde-suave: #e5e5e5;
+  --color-texto-secundario: #666666;
+  --color-texto-terciario: #555555;
+  --color-overlay: rgba(0, 0, 0, 0.25);
+  --color-lightbox-bg: rgba(0, 0, 0, 0.65);
+  --color-footer: #dedede;
+}
+
+/* ============================================================
+   PORTADA / HERO (index.html) - ESPECÍFICO OLIVA REAL
+   ============================================================ */
+.portada-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  min-height: 100vh;
+}
+.portada-imagen {
+  position: relative;
+  overflow: hidden;
+}
+.video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.capa-oscura {
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay);
+  z-index: 1;
+}
+.logo-portada{
+   width: 180px;
+   height: 180px;
+   border-radius: 50%;
+   object-fit: cover;
+   transform: scale(1.3);
+   display: block;
+ }
+.portada-panel-central {
+  background-color: var(--color-acento);
+  color: var(--color-blanco);
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+.portada-panel-central h1 {
+  color: var(--color-acento-claro);
+  font-size: 80px;
+  margin: 18px 0 8px;
+}
+.portada-panel-central .lema {
+  color: var(--color-acento-claro);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.portada-info {
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  padding-top: 20px;
+  width: 100%;
+}
+
+.portada-botones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 260px;
+}
+
+.portada-panel-derecho {
+  background-color: var(--color-fondo);
+  padding: 50px 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+}
+.portada-panel-derecho > .explora-label {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.menu-vertical {
+  display: flex;
+  flex-direction: column;
+}
+.menu-vertical a {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--color-borde);
+  text-decoration: none;
+  color: var(--color-texto);
+  font-size: 20px;
+  font-family: "Playfair Display", serif;
+}
+.menu-vertical a.activo {
+  color: var(--color-acento);
+  font-weight: 600;
+}
+
+/* ============================================================
+   GALERÍA HEADER (galeria.html)
+   ============================================================ */
+.galeria-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.galeria-header .titulo-pagina {
+  margin: 0;
+}
+.galeria-header .barra-filtros {
+  margin: 0;
+}
+
+/* ============================================================
+   CARRUSEL GALERÍA (galeria.html)
+   ============================================================ */
+.carrusel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0;
+}
+.carrusel-btn {
+  width: 56px;
+  height: 56px;
+  border: 2px solid var(--color-acento);
+  background: var(--color-blanco);
+  color: var(--color-acento);
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+  flex-shrink: 0;
+}
+.carrusel-btn:hover:not(:disabled) {
+  background: var(--color-acento);
+  color: var(--color-blanco);
+}
+.carrusel-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+.carrusel-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.carrusel-figura {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  margin: 0;
+}
+.carrusel-figura img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  border: 1px solid var(--color-borde);
+  border-radius: 4px;
+  display: block;
+  cursor: zoom-in;
+  transition: transform 0.2s;
+}
+.carrusel-figura img:hover {
+  transform: scale(1.01);
+}
+
+/* Estado vacío: sin imágenes para el filtro */
+.carrusel-figura.vacio::before {
+  content: "No hay imágenes que se muestren";
+  display: block;
+  width: 100%;
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--color-texto-secundario);
+  font-size: 16px;
+  font-weight: 500;
+  background: var(--color-borde-suave);
+  border: 2px dashed var(--color-borde);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.carrusel-figura.vacio img {
+  display: none;
+}
+.carrusel-figura.vacio .carrusel-contador {
+  display: none;
+}
+.carrusel-contador {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ============================================================
+   TARJETAS PLATOS (la-carta.html)
+   ============================================================ */
+.tarjeta-plato {
+  background: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  display: flex;
+  flex-direction: column;
+}
+.tarjeta-plato img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.tarjeta-plato-body {
+  padding: 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.tarjeta-plato h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.tarjeta-plato p {
+  font-size: 13px;
+  color: var(--color-texto-terciario);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+.tarjeta-plato-pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Items galería */
+.foto-galeria {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+/* ============================================================
+   CONTACTO GRID OVERRIDE (contacto.html)
+   ============================================================ */
+.contacto-grid {
+  grid-template-columns: 1fr 1.2fr;
+}
+
+/* ============================================================
+   RESTAURANTES GRID (nuestros-restaurantes.html)
+   ============================================================ */
+.restaurantes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 28px;
+  text-align: center;
+}
+.restaurante-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.restaurante-card--current {
+  border: 2px solid var(--color-acento);
+}
+.restaurante-logo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.2;
+}
+.restaurante-logo--img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  display: block;
+  object-fit: cover;
+}
+.restaurante-card h3 {
+  margin-bottom: 8px;
+}
+.restaurante-card p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 12px;
+}
+.restaurante-card span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Colores logos - ESPECÍFICOS OLIVA REAL */
+.logo-noble-brasa {
+  background: #6b1e2e;
+}
+.logo-oliva-real {
+  background: #0b4f3f;
+}
+.logo-marea-alta {
+  background: #0b304f;
+}
+.logo-sumi {
+  background: #4a2545;
+}
+.logo-oro-viejo {
+  background: #8a6a2f;
+}
+
+/* ============================================================
+   SOBRE NOSOTROS (sobre-nosotros.html)
+   ============================================================ */
+.sobre-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  align-items: flex-start;
+}
+.sobre-nav {
+  flex: 0 0 220px;
+}
+.sobre-nav__title {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 12px;
+}
+.sobre-nav__list {
+  display: flex;
+  flex-direction: column;
+}
+.sobre-nav__link {
+  padding: 12px 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 13px;
+  color: var(--color-acento);
+  text-decoration: none;
+}
+.sobre-contenido {
+  flex: 1 1 500px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+}
+.sobre-seccion {
+  padding-bottom: 35px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 35px;
+}
+.sobre-seccion:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.sobre-seccion h2 {
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+.sobre-seccion h2 + p {
+  margin-bottom: 12px;
+}
+.sobre-seccion img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  margin-bottom: 18px;
+}
+
+/* ============================================================
+   CONTACTO (contacto.html)
+   ============================================================ */
+.info-ubicacion h2 {
+  font-size: 25px;
+  margin-bottom: 18px;
+}
+.info-ubicacion .info-texto {
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.info-ubicacion .mapa-container {
+  max-width: 480px;
+  border: 1px solid #ccc;
+}
+.info-ubicacion .mapa-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.form-contacto h2 {
+  font-size: 25px;
+  margin-bottom: 18px;
+}
+
+/* ============================================================
+   RESPONSIVE EXTRA: <= 900px (específico Oliva Real)
+   ============================================================ */
+@media (max-width: 900px) {
+  .portada-grid {
+    grid-template-columns: 1fr;
+  }
+  .sobre-nav {
+    flex: 1 1 100%;
+  }
+  .sobre-layout {
+    gap: 30px;
+  }
+  .restaurante-logo {
+    width: 90px;
+    height: 90px;
+    font-size: 12px;
+  }
+  .restaurante-logo--img {
+    width: 90px;
+    height: 90px;
+  }
+  .carrusel {
+    gap: 12px;
+  }
+  .carrusel-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+  .carrusel-figura img {
+    max-height: 400px;
+  }
+}

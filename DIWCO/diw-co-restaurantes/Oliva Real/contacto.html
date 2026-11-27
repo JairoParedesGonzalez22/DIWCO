@@ -1,0 +1,76 @@
+<!doctype html>
+<!-- ============================================================
+   CONTACTO - Oliva Real (DIW&CO)
+   Página de contacto con info ubicación + formulario simple.
+   Estructura: header + main.contenedor > .contacto-grid(.info-ubicacion + .form-contacto)
+   Form: labels implícitos (input dentro de label), sin IDs, con name para envío POST
+   JS: solo intercepta submit (main.js) para mostrar alerta y reset
+   ============================================================ -->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Oliva Real</title>
+    <link rel="stylesheet" href="css/tema.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/cookies.js"></script>
+    <script src="js/formularios.js"></script>
+    <script src="js/transiciones.js"></script>
+  </head>
+  <body>
+    <header class="cabecera">
+      <a href="index.html" class="cabecera-logo"><img src="img/logo.png" alt="Logo Oliva Real"></a>
+      <nav class="menu-principal">
+        <a href="index.html">Inicio</a>
+        <a href="la-carta.html">La carta</a>
+        <a href="pedido-online.html">Pedido online</a>
+        <a href="reservas.html">Reservas</a>
+        <a href="nuestros-restaurantes.html">Nuestros restaurantes</a>
+        <a href="contacto.html" class="activo">Contacto</a>
+      </nav>
+    </header>
+
+    <main class="contenedor">
+      <h1 class="titulo-pagina">Contacto y ubicación</h1>
+      <p class="subtitulo-pagina">Encuéntranos en Oliva Real o escríbenos. Estamos aquí para escucharte.</p>
+
+      <div class="grid-2-columnas contacto-grid">
+        <div class="info-ubicacion">
+          <h2>Dónde estamos</h2>
+          <div class="info-texto">
+            <p><strong>Dirección:</strong> Av. Rufo Garcia Rendueles 3 · Gijón</p>
+            <p><strong>Teléfono:</strong> +34 985 44 55 66</p>
+            <p><strong>Email:</strong> hola@olivareal.example</p>
+            <p><strong>Horarios:</strong> Lun–Vie · 13:00–16:00 / 20:00–23:30 (Sáb–Dom · 13:00–15:30 / 20:00-1:00)</p>
+          </div>
+          <div class="mapa-container">
+            <img src="img/local/mapa.jpg" alt="Mapa de ubicación Oliva Real">
+          </div>
+        </div>
+
+        <form class="caja-blanca form-contacto" action="#" method="POST">
+          <h2>Escríbenos</h2>
+          <div class="form-row-2">
+            <div class="campo-grupo"><label>Nombre *<input type="text" name="nombre" required placeholder="Nombre y apellidos"></label></div>
+            <div class="campo-grupo"><label>Email *<input type="email" name="email" required placeholder="nombre@ejemplo.com"></label></div>
+          </div>
+          <div class="campo-grupo"><label>Teléfono (opcional)<input type="tel" name="telefono" placeholder="Ej.: +34 600 000 000"></label></div>
+          <div class="campo-grupo"><label>Asunto *<select name="asunto" required><option value="">Selecciona un asunto</option><option value="consulta">Consulta</option><option value="sugerencia">Sugerencia</option><option value="reclamacion">Reclamación</option><option value="eventos">Eventos</option></select></label></div>
+          <div class="campo-grupo"><label>Mensaje *<textarea name="mensaje" rows="4" required placeholder="Cuéntanos en qué podemos ayudarte..."></textarea></label></div>
+          <div class="campo-grupo"><label><input type="checkbox" name="privacidad" required> He leído y acepto la <a href="sobre-nosotros.html#politica-privacidad">Política de privacidad</a>. *</label></div>
+          <button type="submit" class="btn-primario btn-submit-full">Enviar</button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="pie-pagina">
+      <div class="pie-grid">
+        <div><h4>Dirección y contacto</h4><p>Av. Rufo Garcia Rendueles 3, Gijón</p><p>+34 985 44 55 66</p></div>
+        <div><h4>Redes sociales</h4><p><a href="https://www.instagram.com/olivarealdiwco/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://facebook.com" target="_blank">Facebook</a></p></div>
+        <div><h4>Horarios</h4><p>Lun–Vie · 13:00–16:00 / 20:00–23:30</p><p>Sáb–Dom · 13:00–15:30 / 20:00-1:00</p></div>
+        <div><h4><a href="sobre-nosotros.html">Sobre nosotros y legal</a></h4><p><a href="galeria.html">Galería</a></p></div>
+      </div>
+    </footer>
+  </body>
+</html>

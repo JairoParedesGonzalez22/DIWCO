@@ -1,0 +1,122 @@
+<!doctype html>
+<!-- ============================================================
+   NUESTROS RESTAURANTES - DIW&CO
+   Página estática con tarjetas de los 5 restaurantes del grupo.
+   NO carga jQuery/main.js (sin interactividad).
+   Estructura: header + main.contenedor > h1/p + .restaurantes-grid
+   Cada tarjeta: a.restaurante-card > .restaurante-logo + h3 + p + span
+   Marea Alta (actual) tiene borde verde oliva destacado (.restaurante-card--current)
+   ============================================================ -->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuestros restaurantes | DIW&CO</title>
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <link rel="stylesheet" href="css/tema.css" />
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <header class="cabecera">
+      <a href="index.html" class="cabecera-logo"
+        ><img src="img/logo.png" alt="Logo Oliva Real"
+      /></a>
+      <nav class="menu-principal">
+        <a href="index.html">Inicio</a>
+        <a href="la-carta.html">La carta</a>
+        <a href="pedido-online.html">Pedido online</a>
+        <a href="reservas.html">Reservas</a>
+        <a href="nuestros-restaurantes.html" class="activo"
+          >Nuestros restaurantes</a
+        >
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </header>
+
+    <main class="contenedor">
+      <h1 class="titulo-pagina">Nuestros restaurantes</h1>
+      <p class="subtitulo-pagina">
+        Cinco propuestas, una misma forma de entender la mesa. DIW&CO
+        Restaurantes.
+      </p>
+
+      <div class="restaurantes-grid">
+        <a href="../noble-brasa/index.html" class="restaurante-card">
+          <div class="restaurante-logo logo-noble-brasa">NOBLE<br />BRASA</div>
+          <h3>Noble Brasa</h3>
+          <p>
+            El sabor de la brasa y el producto de temporada en una mesa para
+            compartir.
+          </p>
+          <span>Marqués de San Esteban 42, Gijón</span>
+        </a>
+
+        <a href="../marea-alta/index.html" class="restaurante-card">
+          <div class="restaurante-logo logo-marea-alta">MAREA<br />ALTA</div>
+          <h3>Marea Alta</h3>
+          <p>
+            Pescados y mariscos de lonja con una propuesta cercana frente al
+            mar.
+          </p>
+          <span>Puerto Deportivo 12, Gijón</span>
+        </a>
+
+        <a href="index.html" class="restaurante-card">
+          <div class="restaurante-logo logo-oliva-real">OLIVA<br />REAL</div>
+          <h3>Oliva Real</h3>
+          <p>
+            Cocina mediterránea y arroces con una mirada actual y sabores
+            tradicionales.
+          </p>
+          <span>Av. Rufo García Rendueles 3, Gijón</span>
+        </a>
+
+        <a href="../sumi/index.html" class="restaurante-card">
+          <div class="restaurante-logo logo-sumi">SUMI</div>
+          <h3>Sumi</h3>
+          <p>
+            Gastronomía japonesa minimalista pensada para disfrutar cada
+            detalle.
+          </p>
+          <span>Calle Aguado 44, Gijón</span>
+        </a>
+
+        <a href="../oro-viejo/index.html" class="restaurante-card">
+          <div class="restaurante-logo logo-oro-viejo">ORO<br />VIEJO</div>
+          <h3>Oro Viejo</h3>
+          <p>
+            Cocina tradicional de autor con ingredientes de siempre y nuevas
+            ideas.
+          </p>
+          <span>Calle San Bernardo 73, Gijón</span>
+        </a>
+      </div>
+    </main>
+
+    <footer class="pie-pagina">
+      <div class="pie-grid">
+        <div>
+          <h4>Dirección y contacto</h4>
+          <p>Av. Rufo Garcia Rendueles 3, Gijón</p>
+          <p>+34 985 44 55 66</p>
+        </div>
+        <div>
+          <h4>Redes sociales</h4>
+          <p>
+            <a href="https://instagram.com" target="_blank">Instagram</a> ·
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+          </p>
+        </div>
+        <div>
+          <h4>Horarios</h4>
+          <p>Lun–Vie · 13:00–16:00 / 20:00–23:30</p>
+          <p>Sáb–Dom · 13:00–15:30 / 20:00-1:00</p>
+        </div>
+        <div>
+          <h4><a href="sobre-nosotros.html">Sobre nosotros y legal</a></h4>
+          <p><a href="galeria.html">Galería</a></p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

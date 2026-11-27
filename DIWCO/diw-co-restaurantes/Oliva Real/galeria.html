@@ -1,0 +1,109 @@
+<!doctype html>
+<!-- ============================================================
+   GALERÍA - Oliva Real (DIW&CO)
+   Página de galería con carrusel manual + filtro por categorías + lightbox.
+   Estructura: header + main.contenedor > .galeria-header + .carrusel + #lightbox-overlay
+   Carrusel: #carrusel-img + flechas prev/next + contador
+   Lightbox: click en imagen del carrusel abre lightbox existente
+   JS: carrusel.js (filtros + navegación manual), lightbox.js (ampliación)
+   ============================================================ -->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería | Oliva Real</title>
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <link rel="stylesheet" href="css/tema.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/cookies.js"></script>
+    <script src="js/carrusel.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script src="js/transiciones.js"></script>
+  </head>
+  <body>
+    <header class="cabecera">
+      <a href="index.html" class="cabecera-logo"><img src="img/logo.png" alt="Logo Oliva Real"></a>
+      <nav class="menu-principal">
+        <a href="index.html">Inicio</a>
+        <a href="la-carta.html">La carta</a>
+        <a href="pedido-online.html">Pedido online</a>
+        <a href="reservas.html">Reservas</a>
+        <a href="nuestros-restaurantes.html">Nuestros restaurantes</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </header>
+
+    <main class="contenedor">
+      <div class="galeria-header">
+        <h1 class="titulo-pagina">Galería</h1>
+        <div class="barra-filtros">
+          <button class="btn-filtro activo" data-filtro="todo">Todo</button>
+          <button class="btn-filtro" data-filtro="local">El local</button>
+          <button class="btn-filtro" data-filtro="platos">Platos</button>
+          <button class="btn-filtro" data-filtro="eventos">Eventos</button>
+        </div>
+      </div>
+
+      <!-- Carrusel principal -->
+      <section class="carrusel">
+        <button id="carrusel-prev" class="carrusel-btn" aria-label="Imagen anterior">←</button>
+        <figure class="carrusel-figura">
+          <img id="carrusel-img" src="" alt="Cargando...">
+          <figcaption id="carrusel-contador" class="carrusel-contador">0 / 0</figcaption>
+        </figure>
+        <button id="carrusel-next" class="carrusel-btn" aria-label="Imagen siguiente">→</button>
+      </section>
+
+      <!-- Grid oculto para lightbox (usa imágenes reales existentes) -->
+      <div class="grid-4" id="grid-lightbox" style="display:none;">
+        <!-- Local (1 imagen real) -->
+        <div class="item-filtrable" data-categoria="local"><img class="foto-galeria" src="img/local/sala.jpg" alt="Sala principal"></div>
+
+        <!-- Platos (imágenes reales de la carpeta platos/) -->
+        <div class="item-filtrable" data-categoria="platos"><img class="foto-galeria" src="img/platos/paella-valenciana.jpg" alt="Paella valenciana"></div>
+        <div class="item-filtrable" data-categoria="platos"><img class="foto-galeria" src="img/platos/fideua.jpg" alt="Fideuá mediterránea"></div>
+        <div class="item-filtrable" data-categoria="platos"><img class="foto-galeria" src="img/platos/arroz-negro.jpg" alt="Arroz negro"></div>
+        <div class="item-filtrable" data-categoria="platos"><img class="foto-galeria" src="img/platos/arroz-senyoret.jpg" alt="Arroz del senyoret"></div>
+        <div class="item-filtrable" data-categoria="platos"><img class="foto-galeria" src="img/platos/arroz-setas-pollo.jpg" alt="Arroz meloso de setas y pollo"></div>
+        <div class="item-filtrable" data-categoria="platos"><img class="foto-galeria" src="img/platos/patatas-bravas.jpg" alt="Patatas bravas"></div>
+        <div class="item-filtrable" data-categoria="platos"><img class="foto-galeria" src="img/platos/croquetas.jpg" alt="Croquetas de jamón ibérico"></div>
+        <div class="item-filtrable" data-categoria="platos"><img class="foto-galeria" src="img/platos/pan-tomate.jpg" alt="Pan con tomate"></div>
+        <div class="item-filtrable" data-categoria="platos"><img class="foto-galeria" src="img/platos/escalivada.jpg" alt="Escalivada mediterránea"></div>
+        <div class="item-filtrable" data-categoria="platos"><img class="foto-galeria" src="img/platos/gambas-ajillo.jpg" alt="Gambas al ajillo"></div>
+        <div class="item-filtrable" data-categoria="platos"><img class="foto-galeria" src="img/platos/ensalada-mediterranea.jpg" alt="Ensalada mediterránea"></div>
+        <div class="item-filtrable" data-categoria="platos"><img class="foto-galeria" src="img/platos/pollo-parrilla.jpg" alt="Pollo a la parrilla"></div>
+        <div class="item-filtrable" data-categoria="platos"><img class="foto-galeria" src="img/platos/secreto-iberico.jpg" alt="Secreto ibérico"></div>
+        <div class="item-filtrable" data-categoria="platos"><img class="foto-galeria" src="img/platos/bacalao-horno.jpg" alt="Bacalao al horno"></div>
+        <div class="item-filtrable" data-categoria="platos"><img class="foto-galeria" src="img/platos/albondigas.jpg" alt="Albóndigas caseras"></div>
+        <div class="item-filtrable" data-categoria="platos"><img class="foto-galeria" src="img/platos/crema-catalana.jpg" alt="Crema catalana"></div>
+        <div class="item-filtrable" data-categoria="platos"><img class="foto-galeria" src="img/platos/tarta-queso.jpg" alt="Tarta de queso"></div>
+        <div class="item-filtrable" data-categoria="platos"><img class="foto-galeria" src="img/platos/torrija.jpg" alt="Torrija caramelizada"></div>
+        <div class="item-filtrable" data-categoria="platos"><img class="foto-galeria" src="img/platos/coulant-chocolate.jpg" alt="Coulant de chocolate"></div>
+
+        <!-- Eventos (reutilizamos sala.jpg como placeholder) -->
+        <div class="item-filtrable" data-categoria="eventos"><img class="foto-galeria" src="img/local/sala.jpg" alt="Evento en sala"></div>
+      </div>
+
+      <div id="lightbox-overlay" class="lightbox-overlay">
+        <div class="lightbox-caja">
+          <div class="lightbox-top"><button id="lightbox-cerrar" class="btn-cant">X</button></div>
+          <div class="lightbox-centro">
+            <button id="lightbox-prev" class="btn-cant">←</button>
+            <img id="lightbox-img" src="" alt="Imagen ampliada">
+            <button id="lightbox-next" class="btn-cant">→</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="pie-pagina">
+      <div class="pie-grid">
+        <div><h4>Dirección y contacto</h4><p>Av. Rufo Garcia Rendueles 3, Gijón</p><p>+34 985 44 55 66</p></div>
+        <div><h4>Redes sociales</h4><p><a href="https://www.instagram.com/olivarealdiwco/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://facebook.com" target="_blank">Facebook</a></p></div>
+        <div><h4>Horarios</h4><p>Lun–Vie · 13:00–16:00 / 20:00–23:30</p><p>Sáb–Dom · 13:00–15:30 / 20:00-1:00</p></div>
+        <div><h4><a href="sobre-nosotros.html">Sobre nosotros y legal</a></h4><p><a href="galeria.html">Galería</a></p></div>
+      </div>
+    </footer>
+  </body>
+</html>

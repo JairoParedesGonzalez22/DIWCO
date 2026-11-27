@@ -1,0 +1,72 @@
+<!doctype html>
+<!-- ============================================================
+   INDEX - Oliva Real (DIW&CO)
+   Página de portada del restaurante (hero con video + 3 paneles).
+   Estructura: main.portada-grid > 3 secciones (izq, centro, der)
+   + banner cookies fixed bottom.
+   ============================================================ -->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <title>Oliva Real | Platos Mediterráneos</title>
+    <link rel="stylesheet" href="css/tema.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/cookies.js"></script>
+    <script src="js/transiciones.js"></script>
+  </head>
+  <body>
+    <main class="portada-grid">
+      <section class="portada-imagen">
+        <video class="video-fondo" autoplay loop muted playsinline poster="img/fondo.jpg">
+          <source src="img/fondo.mp4" type="video/mp4">
+          <track kind="captions" src="img/fondo.es.vtt" srclang="es" label="Español">
+          <track kind="descriptions" src="img/fondo-descripciones.es.vtt" srclang="es" label="Descripción en español">
+          Tu navegador no soporta el video.
+        </video>
+        <div class="capa-oscura"></div>
+      </section>
+
+      <section class="portada-panel-central">
+        <img src="img/logo.png" alt="Logo Oliva Real" class="logo-portada">
+        <h1>Oliva Real</h1>
+        <p class="lema">PLATOS MEDITERRÁNEOS · DIW&CO RESTAURANTES</p>
+        <div class="portada-info">
+          <p><strong>DIRECCIÓN:</strong> Av. Rufo Garcia Rendueles 3 · Gijón</p>
+          <p><strong>TELÉFONO:</strong> +34 985 44 55 66</p>
+          <p><strong>HORARIO:</strong></p>
+          <p>Lun–Vier · 13:00–16:00 / 20:00–23:30</p>
+          <p>Sáb–Dom · 13:00–15:30 / 20:00-1:00</p>
+        </div>
+        <div class="portada-botones">
+          <a href="reservas.html" class="btn-blanco">Reservas</a>
+          <a href="pedido-online.html" class="btn-blanco">Pedir a domicilio</a>
+          <a href="galeria.html" class="btn-borde-blanco">Galería</a>
+        </div>
+      </section>
+
+      <aside class="portada-panel-derecho">
+        <p class="explora-label">EXPLORA OLIVA REAL</p>
+        <nav class="menu-vertical">
+          <a href="index.html" class="activo">— Inicio</a>
+          <a href="la-carta.html">La carta</a>
+          <a href="pedido-online.html">Pedido online</a>
+          <a href="reservas.html">Reservas</a>
+          <a href="nuestros-restaurantes.html">Nuestros restaurantes</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </aside>
+    </main>
+
+    <div id="banner-cookies" class="banner-cookies">
+      <p><strong>Usamos cookies...</strong> Para mejorar tu experiencia y analizar la navegación. Tú decides cuáles aceptar.</p>
+      <div class="cookies-acciones">
+        <button id="btn-aceptar-cookies" class="btn-primario">Aceptar</button>
+        <button id="btn-rechazar-cookies" class="btn-secundario">Rechazar</button>
+        <a href="sobre-nosotros.html#uso-cookies">Más información</a>
+      </div>
+    </div>
+  </body>
+</html>

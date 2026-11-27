@@ -1,0 +1,325 @@
+<!doctype html>
+<!-- ============================================================
+   LA CARTA - Oliva Real (DIW&CO)
+   Página de catálogo de platos con filtros por categoría.
+   Estructura: header.cabecera + main.contenedor > h1 + barra-filtros + section.grid-4 (tarjetas)
+   Cada tarjeta: article.tarjeta-plato.item-filtrable[data-categoria] > img + .tarjeta-plato-body > h3/p + .tarjeta-plato-pie(precio+btn)
+   JS: main.js filtra por data-categoria al click .btn-filtro
+   ============================================================ -->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La carta | Oliva Real</title>
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <link rel="stylesheet" href="css/tema.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/cookies.js"></script>
+    <script src="js/filtros.js"></script>
+    <script src="js/transiciones.js"></script>
+  </head>
+  <body>
+    <header class="cabecera">
+      <a href="index.html" class="cabecera-logo"><img src="img/logo.png" alt="Logo Oliva Real"></a>
+      <nav class="menu-principal">
+        <a href="index.html">Inicio</a>
+        <a href="la-carta.html" class="activo">La carta</a>
+        <a href="pedido-online.html">Pedido online</a>
+        <a href="reservas.html">Reservas</a>
+        <a href="nuestros-restaurantes.html">Nuestros restaurantes</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </header>
+
+    <main class="contenedor">
+      <h1 class="titulo-pagina">Nuestra carta</h1>
+      <p class="subtitulo-pagina">La esencia del Mediterráneo en cada plato. Cocina tradicional, ingredientes frescos y arroces elaborados con mimo.</p>
+
+      <div class="barra-filtros">
+        <button class="btn-filtro activo" data-filtro="todo">Todos</button>
+        <button class="btn-filtro" data-filtro="entrantes">Entrantes</button>
+        <button class="btn-filtro" data-filtro="arroces">Arroces y fideuás</button>
+        <button class="btn-filtro" data-filtro="principales">Principales</button>
+        <button class="btn-filtro" data-filtro="postres">Postres</button>
+      </div>
+
+      <section class="grid-4">
+        <article class="tarjeta-plato item-filtrable" data-categoria="entrantes">
+          <img src="img/platos/patatas-bravas.jpg" alt="Patatas bravas">
+          <div class="tarjeta-plato-body">
+            <div>
+              <h3>Patatas bravas</h3>
+              <p>Patatas crujientes acompañadas de salsa brava casera y alioli.</p>
+            </div>
+            <div class="tarjeta-plato-pie">
+              <strong>7,50 €</strong>
+              <a href="pedido-online.html?plato=patatas-bravas" class="btn-primario">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-plato item-filtrable" data-categoria="entrantes">
+          <img src="img/platos/croquetas.jpg" alt="Croquetas de jamón ibérico">
+          <div class="tarjeta-plato-body">
+            <div>
+              <h3>Croquetas de jamón ibérico</h3>
+              <p>Croquetas cremosas elaboradas con bechamel y jamón ibérico.</p>
+            </div>
+            <div class="tarjeta-plato-pie">
+              <strong>10,00 €</strong>
+              <a href="pedido-online.html?plato=croquetas" class="btn-primario">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-plato item-filtrable" data-categoria="entrantes">
+          <img src="img/platos/pan-tomate.jpg" alt="Pan con tomate">
+          <div class="tarjeta-plato-body">
+            <div>
+              <h3>Pan con tomate</h3>
+              <p>Pan rústico tostado con tomate natural y aceite de oliva virgen extra.</p>
+            </div>
+            <div class="tarjeta-plato-pie">
+              <strong>5,50 €</strong>
+              <a href="pedido-online.html?plato=pan-tomate" class="btn-primario">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-plato item-filtrable" data-categoria="entrantes">
+          <img src="img/platos/escalivada.jpg" alt="Escalivada mediterránea">
+          <div class="tarjeta-plato-body">
+            <div>
+              <h3>Escalivada mediterránea</h3>
+              <p>Pimiento rojo, berenjena y cebolla asados con aceite de oliva.</p>
+            </div>
+            <div class="tarjeta-plato-pie">
+              <strong>9,50 €</strong>
+              <a href="pedido-online.html?plato=escalivada" class="btn-primario">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-plato item-filtrable" data-categoria="entrantes">
+          <img src="img/platos/gambas-ajillo.jpg" alt="Gambas al ajillo">
+          <div class="tarjeta-plato-body">
+            <div>
+              <h3>Gambas al ajillo</h3>
+              <p>Gambas salteadas con ajo, guindilla y aceite de oliva virgen extra.</p>
+            </div>
+            <div class="tarjeta-plato-pie">
+              <strong>13,50 €</strong>
+              <a href="pedido-online.html?plato=gambas-ajillo" class="btn-primario">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-plato item-filtrable" data-categoria="entrantes">
+          <img src="img/platos/ensalada-mediterranea.jpg" alt="Ensalada mediterránea">
+          <div class="tarjeta-plato-body">
+            <div>
+              <h3>Ensalada mediterránea</h3>
+              <p>Tomate fresco, mozzarella, aceitunas negras, albahaca y vinagreta.</p>
+            </div>
+            <div class="tarjeta-plato-pie">
+              <strong>11,00 €</strong>
+              <a href="pedido-online.html?plato=ensalada" class="btn-primario">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-plato item-filtrable" data-categoria="arroces">
+          <img src="img/platos/paella-valenciana.jpg" alt="Paella valenciana">
+          <div class="tarjeta-plato-body">
+            <div>
+              <h3>Paella valenciana</h3>
+              <p>Arroz elaborado con pollo, conejo, judías verdes y garrofón.</p>
+            </div>
+            <div class="tarjeta-plato-pie">
+              <strong>16,50 €</strong>
+              <a href="pedido-online.html?plato=paella" class="btn-primario">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-plato item-filtrable" data-categoria="arroces">
+          <img src="img/platos/fideua.jpg" alt="Fideuá mediterránea">
+          <div class="tarjeta-plato-body">
+            <div>
+              <h3>Fideuá mediterránea</h3>
+              <p>Fideos tostados con gambas, calamares y caldo de pescado.</p>
+            </div>
+            <div class="tarjeta-plato-pie">
+              <strong>17,50 €</strong>
+              <a href="pedido-online.html?plato=fideua" class="btn-primario">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-plato item-filtrable" data-categoria="arroces">
+          <img src="img/platos/arroz-negro.jpg" alt="Arroz negro">
+          <div class="tarjeta-plato-body">
+            <div>
+              <h3>Arroz negro</h3>
+              <p>Arroz cocinado con tinta de calamar, sepia y alioli casero.</p>
+            </div>
+            <div class="tarjeta-plato-pie">
+              <strong>18,00 €</strong>
+              <a href="pedido-online.html?plato=arroz-negro" class="btn-primario">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-plato item-filtrable" data-categoria="arroces">
+          <img src="img/platos/arroz-senyoret.jpg" alt="Arroz del senyoret">
+          <div class="tarjeta-plato-body">
+            <div>
+              <h3>Arroz del senyoret</h3>
+              <p>Arroz mediterráneo con gambas, calamares y pescado limpio.</p>
+            </div>
+            <div class="tarjeta-plato-pie">
+              <strong>19,00 €</strong>
+              <a href="pedido-online.html?plato=arroz-senyoret" class="btn-primario">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-plato item-filtrable" data-categoria="arroces">
+          <img src="img/platos/arroz-setas-pollo.jpg" alt="Arroz meloso de setas y pollo">
+          <div class="tarjeta-plato-body">
+            <div>
+              <h3>Arroz meloso de setas y pollo</h3>
+              <p>Arroz cremoso con pollo, setas y caldo casero.</p>
+            </div>
+            <div class="tarjeta-plato-pie">
+              <strong>16,00 €</strong>
+              <a href="pedido-online.html?plato=arroz-setas" class="btn-primario">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-plato item-filtrable" data-categoria="principales">
+          <img src="img/platos/pollo-parrilla.jpg" alt="Pollo a la parrilla">
+          <div class="tarjeta-plato-body">
+            <div>
+              <h3>Pollo a la parrilla</h3>
+              <p>Pechuga marinada con hierbas mediterráneas y patatas asadas.</p>
+            </div>
+            <div class="tarjeta-plato-pie">
+              <strong>14,50 €</strong>
+              <a href="pedido-online.html?plato=pollo" class="btn-primario">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-plato item-filtrable" data-categoria="principales">
+          <img src="img/platos/secreto-iberico.jpg" alt="Secreto ibérico">
+          <div class="tarjeta-plato-body">
+            <div>
+              <h3>Secreto ibérico</h3>
+              <p>Secreto ibérico a la parrilla con patatas y pimientos asados.</p>
+            </div>
+            <div class="tarjeta-plato-pie">
+              <strong>19,50 €</strong>
+              <a href="pedido-online.html?plato=secreto" class="btn-primario">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-plato item-filtrable" data-categoria="principales">
+          <img src="img/platos/bacalao-horno.jpg" alt="Bacalao al horno">
+          <div class="tarjeta-plato-body">
+            <div>
+              <h3>Bacalao al horno</h3>
+              <p>Lomo de bacalao con tomate natural y patatas panaderas.</p>
+            </div>
+            <div class="tarjeta-plato-pie">
+              <strong>18,50 €</strong>
+              <a href="pedido-online.html?plato=bacalao" class="btn-primario">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-plato item-filtrable" data-categoria="principales">
+          <img src="img/platos/albondigas.jpg" alt="Albóndigas caseras">
+          <div class="tarjeta-plato-body">
+            <div>
+              <h3>Albóndigas caseras</h3>
+              <p>Albóndigas de carne con salsa tradicional de tomate.</p>
+            </div>
+            <div class="tarjeta-plato-pie">
+              <strong>13,50 €</strong>
+              <a href="pedido-online.html?plato=albondigas" class="btn-primario">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-plato item-filtrable" data-categoria="postres">
+          <img src="img/platos/crema-catalana.jpg" alt="Crema catalana">
+          <div class="tarjeta-plato-body">
+            <div>
+              <h3>Crema catalana</h3>
+              <p>Crema suave de vainilla y cítricos con azúcar caramelizado.</p>
+            </div>
+            <div class="tarjeta-plato-pie">
+              <strong>6,00 €</strong>
+              <a href="pedido-online.html?plato=crema-catalana" class="btn-primario">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-plato item-filtrable" data-categoria="postres">
+          <img src="img/platos/tarta-queso.jpg" alt="Tarta de queso">
+          <div class="tarjeta-plato-body">
+            <div>
+              <h3>Tarta de queso</h3>
+              <p>Tarta cremosa de queso con interior suave y base de galleta.</p>
+            </div>
+            <div class="tarjeta-plato-pie">
+              <strong>6,50 €</strong>
+              <a href="pedido-online.html?plato=tarta-queso" class="btn-primario">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-plato item-filtrable" data-categoria="postres">
+          <img src="img/platos/torrija.jpg" alt="Torrija caramelizada">
+          <div class="tarjeta-plato-body">
+            <div>
+              <h3>Torrija caramelizada</h3>
+              <p>Torrija tradicional caramelizada con canela y acompañamiento dulce.</p>
+            </div>
+            <div class="tarjeta-plato-pie">
+              <strong>6,50 €</strong>
+              <a href="pedido-online.html?plato=torrija" class="btn-primario">Pedir</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tarjeta-plato item-filtrable" data-categoria="postres">
+          <img src="img/platos/coulant-chocolate.jpg" alt="Coulant de chocolate">
+          <div class="tarjeta-plato-body">
+            <div>
+              <h3>Coulant de chocolate</h3>
+              <p>Bizcocho de chocolate con corazón fundido y helado de vainilla.</p>
+            </div>
+            <div class="tarjeta-plato-pie">
+              <strong>7,00 €</strong>
+              <a href="pedido-online.html?plato=coulant" class="btn-primario">Pedir</a>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="pie-pagina">
+      <div class="pie-grid">
+        <div><h4>Dirección y contacto</h4><p>Dirección pendiente de confirmar</p><p>Teléfono pendiente de confirmar</p></div>
+        <div><h4>Redes sociales</h4><p><a href="https://www.instagram.com/olivarealdiwco/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://facebook.com" target="_blank">Facebook</a></p></div>
+        <div><h4>Horarios</h4><p>Horario pendiente de confirmar</p></div>
+        <div><h4><a href="sobre-nosotros.html">Sobre nosotros y legal</a></h4><p><a href="galeria.html">Galería</a></p></div>
+      </div>
+    </footer>
+  </body>
+</html>

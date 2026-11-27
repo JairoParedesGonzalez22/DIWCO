@@ -1,0 +1,97 @@
+<!doctype html>
+<!-- ============================================================
+   RESERVAS - Oliva Real (DIW&CO)
+   Página de reserva de mesa con formulario y resumen dinámico.
+   Estructura: header + main.contenedor > form.grid-2-columnas
+   Columna izq: .form-section > campos fecha/hora + .comensales-selector + .radio-group + datos personales + checkbox
+   Columna der: .caja-blanca.resumen-caja > h2 + .restaurante-nombre + .resumen-linea + submit
+   JS: main.js actualiza #sum-fecha, #sum-hora, #sum-comensales, #sum-zona en tiempo real
+   ============================================================ -->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas | Oliva Real</title>
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <link rel="stylesheet" href="css/tema.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/cookies.js"></script>
+    <script src="js/reservas.js"></script>
+    <script src="js/formularios.js"></script>
+    <script src="js/transiciones.js"></script>
+  </head>
+  <body>
+    <header class="cabecera">
+      <a href="index.html" class="cabecera-logo"><img src="img/logo.png" alt="Logo Oliva Real"></a>
+      <nav class="menu-principal">
+        <a href="index.html">Inicio</a>
+        <a href="la-carta.html">La carta</a>
+        <a href="pedido-online.html">Pedido online</a>
+        <a href="reservas.html" class="activo">Reservas</a>
+        <a href="nuestros-restaurantes.html">Nuestros restaurantes</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </header>
+
+    <main class="contenedor">
+      <h1 class="titulo-pagina">Reservas</h1>
+      <p class="subtitulo-pagina">Elige cuándo venir y reserva tu mesa en Oliva Real. Todos los campos son obligatorios (*).</p>
+
+      <form class="grid-2-columnas" action="#" method="POST">
+        <div class="form-section">
+          <h2>Tu mesa</h2>
+
+          <div class="form-grid-2">
+            <div class="campo-grupo"><label>Fecha *<input type="date" name="fecha" id="res-fecha" required></label></div>
+            <div class="campo-grupo"><label>Hora *<select name="hora" id="res-hora" required><option value="">Selecciona una hora</option><option value="13:30">13:30</option><option value="14:30">14:30</option><option value="20:30">20:30</option><option value="21:30">21:30</option></select></label></div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="campo-grupo comensales-selector">
+              <label>Comensales *
+                <div class="selector-cantidad"><button type="button" class="btn-cant" id="res-menos">−</button><span id="res-comensales">1</span><button type="button" class="btn-cant" id="res-mas">+</button></div>
+                <input type="hidden" name="comensales" value="1">
+              </label>
+            </div>
+            <div class="campo-grupo">
+              <label>Zona *
+                <div class="radio-group">
+                  <label><input type="radio" name="zona" value="Interior" checked> Interior</label>
+                  <label><input type="radio" name="zona" value="Exterior"> Exterior</label>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <h2>Tus datos</h2>
+          <div class="form-grid-2">
+            <div class="campo-grupo"><label>Nombre *<input type="text" name="nombre" required placeholder="Nombre y apellidos"></label></div>
+            <div class="campo-grupo"><label>Teléfono *<input type="tel" name="telefono" required placeholder="Ej.: +34 600 000 000"></label></div>
+          </div>
+
+          <div class="campo-grupo"><label><input type="checkbox" name="privacidad" required> He leído y acepto la <a href="sobre-nosotros.html#politica-privacidad">Política de privacidad</a>. *</label></div>
+        </div>
+
+        <div class="caja-blanca resumen-caja">
+          <h2>Resumen</h2>
+          <p class="restaurante-nombre">Oliva Real</p>
+          <p class="resumen-linea"><span>Fecha</span><strong id="sum-fecha">Por seleccionar</strong></p>
+          <p class="resumen-linea"><span>Hora</span><strong id="sum-hora">Por seleccionar</strong></p>
+          <p class="resumen-linea"><span>Comensales</span><strong id="sum-comensales">1 persona</strong></p>
+          <p class="resumen-linea"><span>Zona</span><strong id="sum-zona">Interior</strong></p>
+          <button type="submit" class="btn-primario btn-submit-full">Reservar mesa</button>
+        </div>
+      </form>
+    </main>
+
+    <footer class="pie-pagina">
+      <div class="pie-grid">
+        <div><h4>Dirección y contacto</h4><p>Av. Rufo Garcia Rendueles 3, Gijón</p><p>+34 985 44 55 66</p></div>
+        <div><h4>Redes sociales</h4><p><a href="https://www.instagram.com/olivarealdiwco/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://facebook.com" target="_blank">Facebook</a></p></div>
+        <div><h4>Horarios</h4><p>Lun–Vie · 13:00–16:00 / 20:00–23:30</p><p>Sáb–Dom · 13:00–15:30 / 20:00-1:00</p></div>
+        <div><h4><a href="sobre-nosotros.html">Sobre nosotros y legal</a></h4><p><a href="galeria.html">Galería</a></p></div>
+      </div>
+    </footer>
+  </body>
+</html>
