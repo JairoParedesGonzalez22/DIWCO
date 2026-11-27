@@ -48,6 +48,12 @@
 .restaurantes a { display: flex; flex-direction: column; align-items: center; gap: 12px; text-decoration: none; }
 .restaurantes img { width: 130px; height: 130px; object-fit: contain; }
 .restaurantes p { margin: 8px 0; font-size: .8rem; color: var(--gris); }
+.restaurantes h2 { color: var(--color-restaurante, var(--tinta)); }
+.noble-brasa { --color-restaurante: #6B1E2E; }
+.marea-alta  { --color-restaurante: #14284B; }
+.oliva-real  { --color-restaurante: #0B4F3F; }
+.sumi        { --color-restaurante: #4A2545; }
+.oro-viejo   { --color-restaurante: #8A6A2F; }
 
 /* 6. CONTACTO ------------------------------------------------------------ */
 .info-contacto li { display: flex; gap: 12px; margin-bottom: 16px; font-size: .92rem; }
