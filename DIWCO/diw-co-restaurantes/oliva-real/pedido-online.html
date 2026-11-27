@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pedido online · Oliva Real</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/css/base.css">
+  <link rel="stylesheet" href="../shared/css/components.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body data-sitio="oliva-real" data-pagina="pedido-online">
+
+  <header class="cabecera">
+    <a class="logo" href="index.html"><img src="img/logo.png" alt="Logotipo de Oliva Real"></a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="la-carta.html">La carta</a></li>
+        <li><a href="pedido-online.html">Pedido online</a></li>
+        <li><a href="reservas.html">Reservas</a></li>
+        <li><a href="nuestros-restaurantes.html">Nuestros restaurantes</a></li>
+        <li><a href="contacto-y-ubicacion.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenido">
+    <div class="cabecera-pagina">
+      <div>
+        <h1>Pedido online</h1>
+        <p class="subtitulo">Selecciona tus cortes y platos a la brasa para recoger en el local o recibir a domicilio.</p>
+      </div>
+    </div>
+
+    <form id="form-pedido" class="pedido" novalidate>
+      <div>
+        <div id="filtros-pedido" class="filtros">
+          <button type="button" class="boton boton-secundario activo" data-filtro="todo">Todos</button>
+          <button type="button" class="boton boton-secundario" data-filtro="Entrantes">Entrantes</button>
+          <button type="button" class="boton boton-secundario" data-filtro="Principales">Principales</button>
+          <button type="button" class="boton boton-secundario" data-filtro="Postres">Postres</button>
+          <button type="button" class="boton boton-secundario" data-filtro="Bebidas">Bebidas</button>
+        </div>
+
+        <div id="lista-pedido"></div>
+      </div>
+
+      <aside class="resumen">
+        <h2>Tu pedido</h2>
+
+        <div class="filtros">
+          <button type="button" class="boton boton-secundario activo" data-modo="recoger">Recoger en tienda</button>
+          <button type="button" class="boton boton-secundario" data-modo="domicilio">Entrega a domicilio</button>
+        </div>
+
+        <ul id="lineas-pedido"></ul>
+
+        <div class="linea-total"><span>Unidades</span><span id="unidades">0</span></div>
+        <div class="linea-total"><span>Modalidad</span><span id="modo-actual">Recoger</span></div>
+        <div class="linea-total"><span>Subtotal</span><span id="subtotal">0,00 €</span></div>
+        <div class="linea-total"><span>Envío</span><span id="envio">0,00 €</span></div>
+        <div class="linea-total final"><span>Total</span><span id="total">0,00 €</span></div>
+        <p class="nota">IVA incluido · Sin costes adicionales</p>
+
+        <h3>Datos de entrega</h3>
+
+        <label class="campo">Nombre completo *
+          <input type="text" name="nombre" required>
+        </label>
+
+        <label class="campo solo-domicilio" hidden>Dirección de entrega *
+          <input type="text" name="direccion" placeholder="Calle, número, piso y código postal">
+        </label>
+
+        <label class="campo">Teléfono *
+          <input type="tel" name="telefono" placeholder="Ej.: +34 000 000 000" required>
+        </label>
+
+        <label class="campo">Seleccionar hora *
+          <select name="hora" required>
+            <option value="">Selecciona una hora</option>
+            <option value="13:30">13:30</option>
+            <option value="14:15">14:15</option>
+            <option value="15:00">15:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:15">21:15</option>
+            <option value="22:00">22:00</option>
+          </select>
+        </label>
+
+        <button type="submit" class="boton boton-ancho">Confirmar pedido</button>
+        <div id="mensaje-pedido" class="aviso" hidden></div>
+      </aside>
+    </form>
+  </main>
+
+  <footer class="pie">
+    <div>
+      <h2>Dirección y contacto</h2>
+      <p>Marqués de San Esteban 42, Gijón<br>+34 985 33 11 22</p>
+    </div>
+<div>
+      <h2>Redes sociales</h2>
+      <p class="redes">
+        <a href="https://instagram.com" target="_blank" rel="noopener">
+          <img src="../shared/img/iconos/instagram.svg" alt="Instagram" width="22" height="22">
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener">
+          <img src="../shared/img/iconos/facebook.svg" alt="Facebook" width="22" height="22">
+        </a>
+      </p>
+    </div>
+    <div>
+      <h2>Horarios</h2>
+      <p>Lun–Vie: 13:00–16:00 / 20:00–23:30<br>Sáb–Dom: 13:00–15:30 / 20:00–1:00</p>
+    </div>
+    <div>
+      <h2><a href="sobre-nosotros-y-legal.html">Sobre nosotros y legal</a></h2>
+      <p><a href="galeria.html">Galería</a></p>
+    </div>
+  </footer>
+
+  <script src="../shared/js/vendor/jquery-4.1.0.min.js"></script>
+  <script src="../shared/js/main.js"></script>
+  <script src="js/carta-data.js"></script>
+  <script src="../shared/js/pedido.js"></script>
+</body>
+</html>
