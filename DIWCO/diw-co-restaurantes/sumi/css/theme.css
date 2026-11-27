@@ -1,0 +1,113 @@
+/* theme.css · SUMI (cocina japonesa) — solo lo propio de este restaurante */
+:root {
+  --acento: #4a2545; /* ciruela */
+  --acento-texto: #ffffff;
+  --imagen-inicio: url("../img/inicio.jpg"); /* foto de la columna izquierda de Inicio */
+}
+.inicio-panel h1 {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.inicio-panel .etiqueta {
+  color: var(--dorado);
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  font-weight: 400;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--dorado);
+  margin-bottom: 14px;
+}
+.inicio-panel .boton-secundario {
+  border-color: var(--dorado);
+  color: var(--dorado);
+}
+.menu-lateral a {
+  color: var(--acento);
+  border-bottom-color: var(--acento);
+}
+.menu-lateral .marca {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--linea);
+  font-size: 0.85rem;
+  color: var(--acento);
+}
+.menu-lateral .marca strong {
+  display: block;
+  font-family: var(--fuente-titulo);
+  letter-spacing: 0.02em;
+}
+.menu-lateral .marca em {
+  color: var(--gris);
+}
+.boton img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+.resumen h2 img {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+  vertical-align: -3px;
+}
+.pie img {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  vertical-align: -3px;
+}
+.pie .redes img {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+}
+.visor-anterior,
+.visor-siguiente {
+  flex: none;
+}
+@media (max-width: 900px) {
+  .rejilla-platos,
+  .galeria {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .restaurantes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pedido,
+  .dos-columnas,
+  .dos-columnas.iguales,
+  .documento {
+    grid-template-columns: 1fr;
+  }
+  .pie {
+    grid-template-columns: 1fr 1fr;
+  }
+  .inicio {
+    grid-template-columns: 1fr;
+  }
+  .inicio-imagen {
+    min-height: 40vh;
+  }
+  .menu-lateral {
+    padding-top: 72px;
+  }
+  .cabecera {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .cabecera ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 18px;
+  }
+  .fila-plato {
+    grid-template-columns: 72px 1fr;
+  }
+  :root {
+    --margen: 20px;
+  }
+}
