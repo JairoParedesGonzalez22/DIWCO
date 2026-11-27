@@ -2,7 +2,32 @@
 :root {
   --acento: #4a2545; /* ciruela */
   --acento-texto: #ffffff;
-  --imagen-inicio: url("../img/inicio.jpg"); /* foto de la columna izquierda de Inicio */
+  --imagen-inicio: url("../img/sushiInicio.jpg"); /* foto de la columna izquierda de Inicio */
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+/* Inicio a pantalla completa */
+.inicio {
+  display: grid;
+  grid-template-rows: 1fr; /* la fila ocupa todo el alto */
+  height: 100vh;
+  height: 100dvh; /* en móvil descuenta la barra del navegador */
+  min-height: 100dvh;
+  padding-bottom: 0; /* components.css pone 96px aquí: es la franja crema */
+}
+.inicio-imagen,
+.inicio-panel,
+.menu-lateral {
+  height: 100%;
+  min-height: 0;
+}
+.inicio-imagen {
+  background: var(--imagen-inicio) center / cover no-repeat;
 }
 .inicio-panel h1 {
   font-weight: 700;
@@ -22,6 +47,8 @@
   border-color: var(--dorado);
   color: var(--dorado);
 }
+
+/* Menú lateral */
 .menu-lateral a {
   color: var(--acento);
   border-bottom-color: var(--acento);
@@ -41,6 +68,8 @@
 .menu-lateral .marca em {
   color: var(--gris);
 }
+
+/* Iconos */
 .boton img {
   width: 20px;
   height: 20px;
@@ -69,6 +98,16 @@
 .visor-siguiente {
   flex: none;
 }
+
+/* Aviso de cookies: fuera del flujo para que no cree scroll ni franja extra */
+.aviso-cookies {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+}
+
 @media (max-width: 900px) {
   .rejilla-platos,
   .galeria {
@@ -86,11 +125,19 @@
   .pie {
     grid-template-columns: 1fr 1fr;
   }
+  /* En móvil se apila: alto libre, mínimo pantalla completa */
   .inicio {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+    min-height: 100dvh;
   }
   .inicio-imagen {
+    height: auto;
     min-height: 40vh;
+  }
+  .inicio-panel {
+    height: auto;
   }
   .menu-lateral {
     padding-top: 72px;
